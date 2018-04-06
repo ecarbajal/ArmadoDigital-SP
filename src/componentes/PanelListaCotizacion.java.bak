@@ -1,0 +1,80 @@
+package componentes;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Vector;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import utils.DBConnect;
+
+public class PanelListaCotizacion extends javax.swing.JPanel implements ActionListener{
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JButton btnNueva;
+  
+	public PanelListaCotizacion() {
+		setBounds(0, 0, 900, 365);
+		setBackground(Color.white);
+		add(btnNueva());		
+		String[]  columnNames = {"Id", "Nombre Evento", "Lugar Evento", "Fecha Inicio", 
+				                 "Fecha Fin", "Montaje", "Desmontaje"};		
+		DBConnect dbc = new DBConnect();	 
+		Vector<String[]> datos = dbc.getCotizaciones();
+		Object[][] data = new Object[datos.size()][7];
+		for(int i=0; i<datos.size(); i++){           
+            data[i]=datos.get(i);           
+        }
+		setLayout(null);
+		 
+		 JButton btnImpCot = new JButton("Imprime Cotización");
+		 btnImpCot.setBounds(223, 312, 152, 23);
+		 btnImpCot.setForeground(new Color(255,255,255));
+		 btnImpCot.setBackground(new Color(18,43,74));
+		 btnImpCot.addActionListener(this);
+		 add(btnImpCot);
+		 final JTable table = new JTable(data, columnNames);
+		 table.setPreferredScrollableViewportSize(new Dimension(900, 274));
+		 table.setForeground(new Color(0, 70, 129));
+		 table.setFont(new Font("Arial", Font.BOLD, 12));
+		 
+		 //Creamos un JscrollPane y le agregamos la JTable
+		 JScrollPane scrollPane = new JScrollPane(table);
+		 scrollPane.setBounds(0, 0, 900, 200);
+		 add(scrollPane);
+	}
+	
+	public void actionPerformed(ActionEvent arg0) {
+		
+	}
+
+	public JButton btnNueva() {
+		if (btnNueva == null) {
+			try {
+				btnNueva = new JButton();
+				btnNueva.setIcon(new ImageIcon("Images\\home.png"));
+				btnNueva.setBounds(585, 217, 82, 72);
+//				btnNueva.setIcon(new ImageIcon("C:\\Desarrollos\\Workspace SP\\ARMADIG\\images\\home.png"));
+				btnNueva.setName("btnNueva");				
+				btnNueva.setVisible(true);				
+			} catch (java.lang.Throwable ignored) {	}
+		}
+		return btnNueva;
+	}
+	
+	public static void main(String[] args) {
+		JFrame frame = new JFrame();
+		frame.setBounds(340, 100, 886, 500);
+		PanelListaCotizacion pl = new PanelListaCotizacion();
+		frame.getContentPane().add(pl);		
+		frame.setVisible(true);
+	}
+}

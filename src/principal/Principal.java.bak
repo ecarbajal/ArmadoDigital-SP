@@ -1,0 +1,1718 @@
+package principal;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+import java.io.IOException;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+
+import com.itextpdf.text.DocumentException;
+
+import componentes.HojaMem;
+import componentes.PanelAcceso;
+import componentes.PanelBotones;
+import componentes.CambioUsuario;
+import componentes.PanelCabecera;
+import componentes.PanelCabecera2;
+import componentes.PanelListaCotizacion;
+import componentes.PanelSolicitud;
+import componentes.PanelSolicitudContrato;
+import componentes.PanelSolicitudContrato2;
+import componentes.PanelSolicitudContrato2sp;
+import componentes.PanelSolicitudContrato3;
+import componentes.PanelSolicitudContrato3sp;
+import componentes.PanelSolicitudContratosp;
+import componentes.PanelSolicitudc;
+import componentes.PanelSolicitudcc;
+import componentes.PanelSolicitudl;
+import creaDoc.CreaContrato;
+import creaDoc.CreaContratosp;
+import creaDoc.CreaCotizacion;
+import creaDoc.CreaCotizacion2;
+import creaDoc.CreaCotizacionl;
+import creaDoc.CreaHoja;
+import java.awt.GridLayout;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+
+public class Principal   extends JFrame
+		implements ActionListener, MouseMotionListener, java.awt.event.FocusListener, WindowListener, Runnable {
+
+	/**
+	 * 
+	 */	
+	private static final long serialVersionUID = 1L;
+	public static String usuario;
+	public static String fechacrl;
+	public static String fechaal;
+	public static String empresal;
+	public static String representall;
+	public static String inotariall;
+	public static String fechainl;
+	public static String licenciafl;
+	public static String notariopl;
+	public static String npdel;
+	public static String deledel;
+	public static String comerdel;
+	public static String folioml;
+	public static String domiciliol;
+	public static String rfcl;
+	public static String texto1l;
+	public static String texto2l;
+	public static String texto3l;
+	public static String texto4l;
+	public static String texto5l;
+	public static String texto6l;
+	public static String texto7l;
+	public static String fechafcl;
+	public static String fechafml;
+	public static String montotl;
+	public static String mensuall;
+	public static String productos;
+	public static String cliente;
+	public static String cotizacion;
+	public static String horariomon;
+	public static String horariose;
+	public static String horades;
+	public static String fecmonta;
+	public static String fecha;
+	public static String descripcionev;
+	public static String horariodesm;
+	public static String lugar;
+	public static String descripcionh;
+	public static String productosl;
+	public static String clientel;
+	public static String horariomont;
+	public static String fechal;
+	public static String descripcionevl;
+	public static String lugarl;
+	public static String descripcionhl;
+	
+	public static String fechacrlsp;
+	public static String fechaalsp;
+	public static String empresalsp;
+	public static String representallsp;
+	public static String inotariallsp;
+	public static String fechainlsp;
+	public static String licenciaflsp;
+	public static String notarioplsp;
+	public static String npdelsp;
+	public static String deledelsp;
+	public static String comerdelsp;
+	public static String foliomlsp;
+	public static String domiciliolsp;
+	public static String rfclsp;
+	public static String texto1lsp;
+	public static String texto2lsp;
+	public static String texto3lsp;
+	public static String texto4lsp;
+	public static String texto5lsp;
+	public static String texto6lsp;
+	public static String texto7lsp;
+	public static String fechafclsp;
+	public static String fechafmlsp;
+	public static String montotlsp;
+	public static String mensuallsp;
+	public static String productossp;
+	public static String clientesp;
+	public static String fechasp;
+	public static String descripcionevsp;
+	public static String lugarsp;
+	public static String descripcionhsp;
+	public static String productoslsp;
+	public static String clientelsp;
+	public static String fechalsp;
+	public static String descripcionevlsp;
+	public static String lugarlsp;
+	public static String descripcionhlsp;
+	
+	public static String contenido;
+	public static String contenido2;
+	public static String contenido3;
+	public static String contenido4;
+	public static String contenido5;
+	public static String contenido6;
+	public static String contenido7;
+	public static String contenido8;
+	public static String contenido9;
+	public static String contenido10;
+	public static String contenido11;
+	public static String contenido12;
+	public static String contenido13;
+	public static String contenido14;
+	public static String contenido15;
+	public static String contenido16;
+	public static String contenido17;
+	public static String contenido18;
+	public static String contenido19;
+	public static String contenido20;
+	public static String contenido21;
+	public static String contenido22;
+	public static String contenido23;
+	public static String contenido24;
+	public static String contenido25;
+	public static String contenido26;
+	public static String contenido27;
+	public static String contenido28;
+	public static String contenido29;
+	public static String contenido30;
+	public static String contenido31;
+	public static String contenido32;
+	public static String contenido33;
+	public static String contenido34;
+	public static String contenido35;
+	public static String contenido36;
+	public static String contenido37;
+	public static String contenido38;
+	public static String contenido39;
+	public static String contenido40;
+	public static String contenido41;
+	public static String contenido42;
+	public static String contenido43;
+	public static String contenido44;
+	public static String contenido45;
+	public static String contenido46;
+	public static String contenido47;
+	public static String contenido48;
+	public static String contenido49;
+	public static String contenido50;
+	public static String contenido51;
+	public static String telefono;
+	public static String contacto;
+	public static String fechaso;
+	public static String fechade;
+	public static String horariode;
+	public static String diasmo;
+	public static String diasev;
+	public static String email;
+    public static String cantidads;
+    public static String diass;
+    public static String comboBox;
+	public static String descripcion;
+	public static String preciouni;
+	public static String unidad;
+	public static String telefonol;
+	public static String contactol;
+	public static String domicilioenl;
+	public static String domiciliorel;
+	public static String fechasol;
+	public static String fechadel;
+	public static String horariodel;
+	public static String diasmol;
+	public static String diasevl;
+	public static String emaill;
+    public static String cantidadsl;
+    public static String diassl;
+    public static String comboBoxl;
+	public static String descripcionl;
+	public static String preciounil;
+	public static String unidadl;
+	public static String cua;
+	private static String idUser;
+	public static String estructura = "_Certificado_Nombre";
+	public static String rfc;
+	public static String cobranza;
+	public static String fecIniVig;
+	public static String fecFinVig;
+	private JScrollPane frmPrincipal;
+	private PanelBotones panelBotones;
+	private CambioUsuario cambioUsuario;
+	private PanelAcceso panelAcceso;
+	private PanelSolicitud sol;
+	private PanelListaCotizacion lc;
+	private HojaMem HojaScroll;
+	private PanelSolicitudc Solc;
+	private PanelSolicitudcc Solcc;
+	private PanelSolicitudl Sol2;
+	private PanelSolicitudContrato Solcon1;
+	private PanelSolicitudContrato2 Solcon2;
+	private PanelSolicitudContrato3 Solcon3;
+	private PanelSolicitudContratosp Solcon1sp;
+	private PanelSolicitudContrato2sp Solcon2sp;
+	private PanelSolicitudContrato3sp Solcon3sp;
+	private PanelCabecera panelCabecera;
+	private PanelCabecera2 panelCabecera2;
+	private String nNegocio = "";	
+	String[] cargas;
+	String[] movimientos;
+	String[] polizas;
+	String st = "", user = "", Prodcutos = "";
+	int contpol = 0, contmov = 0, contpp = 0;
+	int contprod = 0; 
+	int numeroc = 0;
+	int ca   =   0;
+	int contrato = 0; 
+	int contrato2 = 0; 
+	int ol = 0; 
+	int contrato3 = 0; 
+	int subtotal = 0; 
+	int grantotal = 0; 
+	int iva16 = 0; 
+	int contrato4 = 0; 
+	int contratosp = 0; 
+	int contrato2sp = 0; 
+	int contrato3sp = 0; 
+	int contrato4sp = 0; 
+	int fechac = 0; 
+	int agregal = 0; 
+	int agrega = 0; 
+	int contprodl = 0; 
+	String subtotalc = "";
+	String grantotalc = "";
+	String iva16c = "";
+	public boolean ejecutar = false;
+	public boolean ejecutarPool = false;
+	String[] datos = new String[]{"",""};
+	int cantidadcl[]= new int[200] ;
+	String clacificaion[]= new String[200] ;
+	int diascl[]= new int[200] ;
+	String boxl[]= new String[200] ;
+	String unidadcl[]= new String[200] ;
+	int precioucl[]= new int[200] ;
+	String descripcioncl[]= new String[200] ;
+	String clacificacion[]= new String[200] ;
+	String box[]= new String[200] ;
+	String unidadc[]= new String[200] ;
+	String descripcionc[]= new String[200] ;
+	String descripcionc0[]= new String[200] ;
+	String descripcionc3[]= new String[200] ;
+	String cad3[]= new String[161] ;
+	String cad4[]= new String[161] ;
+	String cad = "";
+	String cad2 = "";	
+	
+	String cantidadc[]= new String[200] ;
+	int cantidadcm[]= new int[200] ;
+	
+	String importec[]= new String[200] ;
+	int importecm[]= new int[200] ;
+	
+	String diasc[]= new String[200] ;
+	int diascm[]= new int[200] ;
+    
+	String preciouc[]= new String[200] ;
+	int precioucm[]= new int[200] ;
+		
+	/**
+	 * Launch the application.
+	 */
+	 
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Principal window = new Principal();
+					window.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public Principal() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		setTitle("Armado Digital SP");
+		setName("Armado Digital SP");
+		setBounds(340, 100, 886, 500);
+		setContentPane(getFrmPrincipal());
+		getPanelBotones().setVisible(false);
+		getCambioUsuario().setVisible(false);
+		getPanelSolicitud().setVisible(false);
+		getHojaMem().setVisible(false);
+		getPanelSolicitudc().setVisible(false);
+		getPanelSolicitudcc().setVisible(false);
+		getPanelSolicitud().botonAgregar().addActionListener(this);
+		getHojaMem().getbotonGenerar().addActionListener(this);
+		getPanelSolicitudcc().BotonSiguientec().addActionListener(this);
+		getPanelSolicitudc().BotonSiguientec().addActionListener(this);
+		getPanelSolicitudContrato().BotonSiguientec().addActionListener(this);
+		getPanelSolicitudContrato2().BotonSiguientec2().addActionListener(this);
+		getPanelSolicitudContrato3().BotonSiguientec3().addActionListener(this);
+		getPanelSolicitudContratosp().BotonSiguientec().addActionListener(this);
+		getPanelSolicitudContrato2sp().BotonSiguientec2().addActionListener(this);
+		getPanelSolicitudContrato3sp().BotonSiguientec3().addActionListener(this);
+		getPanelSolicitud().btnGenerac().addActionListener(this);
+		getPanelSolicitud().btnNueva().addActionListener(this);	
+		getPanelListaCotizacion().btnNueva().addActionListener(this);	
+		getPanelSolicitudc().btnNueva().addActionListener(this);	
+		getPanelSolicitudl().botonAgregarl().addActionListener(this);
+		getPanelSolicitudl().btnGeneracl().addActionListener(this);	
+		getCambioUsuario().getBtnCambiou().addActionListener(this);
+		getPanelBotones().getBtnCotizadorsp().addActionListener(this);
+		getPanelBotones().getBtnContratos().addActionListener(this);
+		getPanelBotones().getBtnbtnContratossp().addActionListener(this);
+		getPanelBotones().getBtnListacotiza().addActionListener(this);
+		getPanelBotones().getBtnHojam().addActionListener(this);
+		getPanelBotones().getbtnCotizadorled().addActionListener(this);
+		getPanelSolicitudc().getcliente().addFocusListener(this);
+		getPanelSolicitudc().getlugars().addFocusListener(this);
+		getPanelSolicitudc().getfechas().addFocusListener(this);
+		getPanelSolicitudc().getnombredelevento().addFocusListener(this);
+		getPanelSolicitudc().getrazonsocial().addFocusListener(this);
+		getPanelSolicitudc().gettelefonos().addFocusListener(this);		
+		getPanelSolicitudc().getfechass().addFocusListener(this);
+		getPanelSolicitudc().getfechasd().addFocusListener(this);
+		getPanelSolicitudc().getHorariodes().addFocusListener(this);
+		getPanelSolicitudc().getdiassm().addFocusListener(this);
+		getPanelSolicitudc().getdiasse().addFocusListener(this);
+		getPanelSolicitudc().getemails().addFocusListener(this);
+		getPanelSolicitud().getcantidads().addFocusListener(this);
+		getPanelSolicitud().getdiass().addFocusListener(this);
+		getPanelSolicitud().getTextFieldDescripcion().addFocusListener(this);
+		getPanelSolicitud().getTextFieldDescripcion0().addFocusListener(this);
+		getPanelSolicitud().getTextFieldDescripcion3().addFocusListener(this);		
+		getPanelSolicitudContrato().getempresa().addFocusListener(this);
+		getPanelSolicitudContrato().getrepresental().addFocusListener(this);
+		getPanelSolicitudContrato().getinotarial().addFocusListener(this);
+		getPanelSolicitudContrato().getfechain().addFocusListener(this);
+		getPanelSolicitudContrato().getlicenciaf().addFocusListener(this);
+		getPanelSolicitudContrato().getnotariop().addFocusListener(this);
+		getPanelSolicitudContrato().getnpde().addFocusListener(this);
+		getPanelSolicitudContrato().getdelede().addFocusListener(this);
+		getPanelSolicitudContrato().getcomerde().addFocusListener(this);
+		getPanelSolicitudContrato().getfoliom().addFocusListener(this);
+		getPanelSolicitudContrato().getfechafm().addFocusListener(this);
+		getPanelSolicitudContrato().getdomicilio().addFocusListener(this);
+		getPanelSolicitudContrato().getrfc().addFocusListener(this);
+		getPanelSolicitudContrato2().getfechacr().addFocusListener(this);
+		getPanelSolicitudContrato2().getfechaa().addFocusListener(this);
+		getPanelSolicitudContrato2().getmontot().addFocusListener(this);
+		getPanelSolicitudContrato2().getmensual().addFocusListener(this);		
+		getPanelSolicitudContratosp().getempresa().addFocusListener(this);
+		getPanelSolicitudContratosp().getrepresental().addFocusListener(this);
+		getPanelSolicitudContratosp().getinotarial().addFocusListener(this);
+		getPanelSolicitudContratosp().getfechain().addFocusListener(this);
+		getPanelSolicitudContratosp().getlicenciaf().addFocusListener(this);
+		getPanelSolicitudContratosp().getnotariop().addFocusListener(this);
+		getPanelSolicitudContratosp().getnpde().addFocusListener(this);
+		getPanelSolicitudContratosp().getdelede().addFocusListener(this);
+		getPanelSolicitudContratosp().getcomerde().addFocusListener(this);
+		getPanelSolicitudContratosp().getfoliom().addFocusListener(this);
+		getPanelSolicitudContratosp().getfechafm().addFocusListener(this);
+		getPanelSolicitudContratosp().getdomicilio().addFocusListener(this);
+		getPanelSolicitudContratosp().getrfc().addFocusListener(this);
+		getPanelSolicitudContrato2sp().getfechacr().addFocusListener(this);
+		getPanelSolicitudContrato2sp().getfechaa().addFocusListener(this);
+		getPanelSolicitudContrato2sp().getmontot().addFocusListener(this);
+		getPanelSolicitudContrato2sp().getmensual().addFocusListener(this);		
+		getPanelSolicitud().getTextFieldUnidad().addFocusListener(this);
+		getPanelAcceso().getLabelPass().addFocusListener(this);
+		getPanelAcceso().getLabelUser().addFocusListener(this);
+		getPanelSolicitud().getTextFieldPreciou().addFocusListener(this);
+		this.addMouseMotionListener(this);
+		this.removeMouseMotionListener(this);
+		addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+	}
+
+	
+	public JScrollPane getFrmPrincipal() {
+		if (frmPrincipal == null) {			frmPrincipal = new JScrollPane();
+			frmPrincipal.setBounds(0, 0, 900, 500);
+			frmPrincipal.setBackground(Color.white);
+			frmPrincipal.setLayout(null);
+			frmPrincipal.add(getPanelBotones());
+			frmPrincipal.add(getHojaMem());
+			frmPrincipal.add(getPanelSolicitud());
+			frmPrincipal.add(getCambioUsuario());
+			frmPrincipal.add(getPanelSolicitudContrato());
+			frmPrincipal.add(getPanelSolicitudContrato2());
+			frmPrincipal.add(getPanelSolicitudContrato3());
+			frmPrincipal.add(getPanelSolicitudContratosp());
+			frmPrincipal.add(getPanelSolicitudContrato2sp());
+			frmPrincipal.add(getPanelSolicitudContrato3sp());
+			frmPrincipal.add(getPanelSolicitudl());
+			frmPrincipal.add(getPanelSolicitudc());
+			frmPrincipal.add(getPanelSolicitudcc());
+			frmPrincipal.add(getPanelAcceso());
+			frmPrincipal.add(getPanelCabecera());
+			frmPrincipal.add(getPanelCabecera2());
+			frmPrincipal.setVisible(true);			
+		}
+		return frmPrincipal;
+	}
+
+	public PanelAcceso getPanelAcceso() {
+		if (panelAcceso == null) {
+			panelAcceso = new PanelAcceso();
+			panelAcceso.setBounds(0, 368, 1000, 93);
+			panelAcceso.getBotonAceptar().setSize(94, 23);
+			panelAcceso.getLabelPass().setSize(369, 23);
+			panelAcceso.getLabelUser().setSize(369, 23);
+			panelAcceso.getTextPass().setSize(394, 23);
+			panelAcceso.getTextUser().setSize(394, 23);			
+			panelAcceso.getTextPass().setLocation(200, 193);
+			panelAcceso.getTextUser().setLocation(250, 148);
+			panelAcceso.getBotonAceptar().setLocation(388, 257);
+			panelAcceso.getBotonAceptar().addActionListener(this);
+			panelAcceso.getBotonAceptar().setForeground(new Color(255, 255, 255));
+			panelAcceso.getBotonAceptar().setFont(new Font("Tahoma", Font.PLAIN, 11));
+			panelAcceso.getBotonAceptar().setBackground(new Color(18, 43, 74));
+			panelAcceso.getLabelPass().setText("Contrase\u00F1a");
+			panelAcceso.getLabelUser().setText("Usuario");
+			panelAcceso.getTextUser().setForeground(new Color(102, 102, 102));
+			panelAcceso.getTextPass().setForeground(new Color(102, 102, 102));
+			panelAcceso.getLabelUser().setLocation(294, 148);
+			panelAcceso.getLabelPass().setLocation(294, 193);
+			//boton regresar, pantalla generacion de PDF
+			panelAcceso.getBtnRegresar().addActionListener(this);
+			panelAcceso.setVisible(true);
+		}
+		return panelAcceso;
+	}
+
+	public PanelBotones getPanelBotones() {
+		if (panelBotones == null) {
+
+			panelBotones = new PanelBotones();
+			panelBotones.setBounds(334, 25, 200, 238);
+			panelBotones.getBtnCotizadorsp().setSize(172, 30);
+			panelBotones.getBtnCotizadorsp().setLocation(10, 5);
+			panelBotones.getbtnCotizadorled().setLocation(10, 46);
+			panelBotones.getbtnCotizadorled().setSize(172, 30);
+			panelBotones.getBtnListacotiza().setLocation(10, 87);
+			panelBotones.getBtnListacotiza().setSize(172, 30);
+			panelBotones.getBtnContratos().setSize(172, 30);
+			panelBotones.getBtnContratos().setLocation(10, 169);
+			panelBotones.getBtnbtnContratossp().setSize(172, 30);
+			panelBotones.getBtnbtnContratossp().setLocation(10, 128);
+			panelBotones.getBtnHojam().setSize(172, 30);
+			panelBotones.getBtnHojam().setLocation(10, 210);
+			panelBotones.setVisible(false);
+		}
+		return panelBotones;
+	}	
+	
+
+	public CambioUsuario getCambioUsuario() {
+		if (cambioUsuario == null) {
+
+			cambioUsuario = new CambioUsuario();
+			cambioUsuario.setBounds(740, 360, 125, 100);
+			cambioUsuario.getBtnCambiou().setSize(63, 60);
+
+			cambioUsuario.setVisible(true);
+		}
+		return cambioUsuario;
+	}	
+	
+	public PanelCabecera getPanelCabecera() {
+		if (panelCabecera == null) {
+			panelCabecera = new PanelCabecera();
+			panelCabecera.setBounds(0, 270, 1000, 90);
+			panelCabecera.setVisible(true);
+
+		}
+		return panelCabecera;
+	}
+
+	public PanelCabecera2 getPanelCabecera2() {
+		if (panelCabecera2 == null) {
+			panelCabecera2 = new PanelCabecera2();
+			panelCabecera2.setBounds(-60,65, 1000, 300);
+			panelCabecera2.setVisible(true);
+			
+		}
+		return panelCabecera2;
+	}
+	public PanelSolicitud getPanelSolicitud() {
+		if (sol == null) {
+			sol = new PanelSolicitud();
+			sol.setBounds(0, 0, 950, 276);
+			sol.getsol().setBounds(0, 0, 900, 274);
+			sol.setVisible(false);
+		}
+		return sol;
+	}
+	
+	public PanelListaCotizacion getPanelListaCotizacion() {
+		if (lc == null) {
+			lc = new PanelListaCotizacion();
+			lc.setBounds(0, 0, 900, 294);
+			lc.setVisible(false);
+		}
+		return lc;
+	}	
+	
+	public PanelSolicitudContrato getPanelSolicitudContrato() {
+		if (Solcon1 == null) {
+			Solcon1 = new PanelSolicitudContrato();
+			Solcon1.setBounds(0, 0, 886, 276);
+			Solcon1.getClientecon().setBounds(0, 0, 800, 274);
+			Solcon1.setVisible(false);
+		}
+		return Solcon1;
+	}
+
+	public PanelSolicitudContrato2 getPanelSolicitudContrato2() {
+		if (Solcon2 == null) {
+			Solcon2 = new PanelSolicitudContrato2();
+			Solcon2.setBounds(0, 0, 886, 276);
+			Solcon2.getClientecon().setBounds(0, 0, 800, 274);
+			Solcon2.setVisible(false);
+		}
+		return Solcon2;
+	}
+	
+	public PanelSolicitudContrato3 getPanelSolicitudContrato3() {
+		if (Solcon3 == null) {
+			Solcon3 = new PanelSolicitudContrato3();
+			Solcon3.setBounds(0, 0, 886, 276);
+			Solcon3.getClientecon().setBounds(0, 0, 800, 274);
+			Solcon3.setVisible(false);
+		}
+		return Solcon3;
+	}
+	
+	public PanelSolicitudContratosp getPanelSolicitudContratosp() {
+		if (Solcon1sp == null) {
+			Solcon1sp = new PanelSolicitudContratosp();
+			Solcon1sp.setBounds(0, 0, 886, 276);
+			Solcon1sp.getClientecon().setBounds(0, 0, 800, 274);
+			Solcon1sp.setVisible(false);
+		}
+		return Solcon1sp;
+	}
+
+	public PanelSolicitudContrato2sp getPanelSolicitudContrato2sp() {
+		if (Solcon2sp == null) {
+			Solcon2sp = new PanelSolicitudContrato2sp();
+			Solcon2sp.setBounds(0, 0, 886, 276);
+			Solcon2sp.getClientecon().setBounds(0, 0, 800, 274);
+			Solcon2sp.setVisible(false);
+		}
+		return Solcon2sp;
+	}
+	
+	public PanelSolicitudContrato3sp getPanelSolicitudContrato3sp() {
+		if (Solcon3sp == null) {
+			Solcon3sp = new PanelSolicitudContrato3sp();
+			Solcon3sp.setBounds(0, 0, 886, 276);
+			Solcon3sp.getClientecon().setBounds(0, 0, 800, 274);
+			Solcon3sp.setVisible(false);
+		}
+		return Solcon3sp;
+	}
+	
+	public PanelSolicitudl getPanelSolicitudl() {
+		if (Sol2 == null) {
+			Sol2 = new PanelSolicitudl();
+			Sol2.setBounds(0, 0, 886, 276);
+			Sol2.getsol2().setBounds(0, 0, 800, 274);
+			Sol2.setVisible(false);
+		}
+		return Sol2;
+	}
+
+	public HojaMem getHojaMem() {
+		if (HojaScroll == null) {
+			HojaScroll = new HojaMem();
+			HojaScroll.setBounds(0, 0, 1000, 900);
+			HojaScroll.setVisible(false);
+		}
+		return HojaScroll;
+	}
+	
+	public PanelSolicitudc getPanelSolicitudc() {
+		if (Solc == null) {
+			Solc = new PanelSolicitudc();
+			Solc.setBounds(0, 0, 846, 276);
+			Solc.setVisible(false);
+		}
+		return Solc;
+	}
+	
+	public PanelSolicitudcc getPanelSolicitudcc() {
+		if (Solcc == null) {
+			Solcc = new PanelSolicitudcc();
+			Solcc.setBounds(0, 0, 846, 276);
+			Solcc.getCliente().setBounds(0, 0, 900, 285);
+			Solcc.setVisible(false);
+		}
+		return Solcc;
+	}
+
+	
+	
+//	private void ejecutaProcesos() {
+//		try {
+//			getPanelBotones().getBtnCotizadorsp().setEnabled(false);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
+	public void actionPerformed(ActionEvent arg0) {
+		
+		
+		//Funcion del boton "Regresar en la pantalla de generacion del PDF
+		if (arg0.getSource() == getPanelAcceso().getBtnRegresar()) {
+			if (getPanelAcceso().getTextUser().getText().equals("") || getPanelAcceso().getTextPass().equals("")) {
+				String st = "Debe informarse el Usuario y Password";
+				JOptionPane.showMessageDialog(null, st);
+			} else {
+				String datos[] = getPanelAcceso().validar();
+				if (!datos[0].equals("")) {
+					usuario = datos[1]+ " " + datos[2]+" " + datos[3];					
+					getPanelAcceso().setVisible(false);
+					getPanelBotones().setVisible(true);
+					getCambioUsuario().setVisible(true);
+					getPanelCabecera2().setVisible(true);
+					getPanelCabecera2().setBounds(-400,350, 1500, 110);
+				}
+			}
+		}
+		
+		if (arg0.getSource() == getPanelAcceso().getBotonAceptar()) {
+			if (getPanelAcceso().getTextUser().getText().equals("") || getPanelAcceso().getTextPass().equals("")) {
+				String st = "Debe informarse el Usuario y Password";
+				JOptionPane.showMessageDialog(null, st);
+			} else {
+				String datos[] = getPanelAcceso().validar();
+				if (!datos[0].equals("")) {
+					usuario = datos[1]+ " " + datos[2]+" " + datos[3];					
+					getPanelAcceso().setVisible(false);
+					getPanelBotones().setVisible(true);
+					getCambioUsuario().setVisible(true);
+					getPanelCabecera2().setVisible(true);
+					getPanelCabecera2().setBounds(-400,350, 1500, 110);
+				}
+			}
+		}
+		
+		if (arg0.getSource() == getPanelBotones().getBtnListacotiza()) {
+			getPanelBotones().setVisible(false);
+			getPanelListaCotizacion().setVisible(true);
+		}
+		
+		if (arg0.getSource() == getCambioUsuario().getBtnCambiou()) {
+			
+			
+			initialize();
+			getPanelAcceso().setVisible(true);
+			getPanelCabecera2().setVisible(true);
+			
+			//Ocultar el formulario de solicitud de contrato
+            getPanelSolicitudContrato().setVisible(false);
+			//Ocultar el formulario de solicitud de contrato
+            getPanelSolicitudContratosp().setVisible(false);
+            
+			getPanelCabecera2().setBounds(-60,65, 1000, 300);
+			getPanelAcceso().getTextUser().setText("");
+			getPanelAcceso().getTextPass().setText("");
+
+		}
+		
+		
+		
+		if (arg0.getSource() == getPanelSolicitud().btnGenerac()) {			
+			if(agrega < 1 ){
+				st = "Favor de agregar minimo 1 producto";
+				JOptionPane.showMessageDialog(null, st);
+			}else {				
+				if (agrega > 0  && agrega < 2) {
+			    subtotal = importecm[0] ;
+				}
+				if (agrega > 1  && agrega < 3) {
+				    subtotal = importecm[0] + importecm[1] ;
+					}
+				if (agrega > 2  && agrega < 4) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] ;
+					}
+				if (agrega > 3  && agrega < 5) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] ;
+					}
+				if (agrega > 4  && agrega < 6) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4];
+					}
+				if (agrega > 5  && agrega < 7) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5];
+					}
+				if (agrega > 6  && agrega < 8) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6];
+					}
+				if (agrega > 7  && agrega < 9) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7];
+					}
+				if (agrega > 8  && agrega < 10) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8];
+					}
+				if (agrega > 9  && agrega < 11) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9];
+					}
+				if (agrega > 10  && agrega < 12) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10];
+					}
+				if (agrega > 11  && agrega < 13) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11];
+					}
+				if (agrega > 12  && agrega < 14) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12];
+					}
+				if (agrega > 13  && agrega < 15) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13];
+					}
+				if (agrega > 14  && agrega < 16) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14];
+					}
+				if (agrega > 15  && agrega < 17) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15];
+					}
+				if (agrega > 16  && agrega < 18) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16];
+					}
+				if (agrega > 17  && agrega < 19) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17];
+					}
+				if (agrega > 18  && agrega < 20) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17]+ importecm[18];
+					}
+				if (agrega > 19  && agrega < 21) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17]+ importecm[18]+ importecm[19];
+					}
+				if (agrega > 20  && agrega < 22) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17]+ importecm[18]+ importecm[19]+ importecm[20];
+					}
+				if (agrega > 21  && agrega < 23) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17]+ importecm[18]+ importecm[19]+ importecm[20]+ importecm[21];
+					}
+				if (agrega > 22  && agrega < 24) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17]+ importecm[18]+ importecm[19]+ importecm[20]+ importecm[21]+ importecm[22];
+					}
+				if (agrega > 23  && agrega < 25) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17]+ importecm[18]+ importecm[19]+ importecm[20]+ importecm[21]+ importecm[22]+ importecm[23];
+					}
+				if (agrega > 24  && agrega < 26) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17]+ importecm[18]+ importecm[19]+ importecm[20]+ importecm[21]+ importecm[22]+ importecm[23]+ importecm[24];
+					}
+				if (agrega > 25  && agrega < 27) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17]+ importecm[18]+ importecm[19]+ importecm[20]+ importecm[21]+ importecm[22]+ importecm[23]+ importecm[24]+ importecm[25];
+					}
+				if (agrega > 26  && agrega < 28) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17]+ importecm[18]+ importecm[19]+ importecm[20]+ importecm[21]+ importecm[22]+ importecm[23]+ importecm[24]+ importecm[25]+ importecm[26];
+					}
+				if (agrega > 27  && agrega < 29) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17]+ importecm[18]+ importecm[19]+ importecm[20]+ importecm[21]+ importecm[22]+ importecm[23]+ importecm[24]+ importecm[25]+ importecm[26]+ importecm[27];
+					}
+				if (agrega > 28  && agrega < 30) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17]+ importecm[18]+ importecm[19]+ importecm[20]+ importecm[21]+ importecm[22]+ importecm[23]+ importecm[24]+ importecm[25]+ importecm[26]+ importecm[27]+ importecm[28];
+					}
+				if (agrega > 29  && agrega < 31) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17]+ importecm[18]+ importecm[19]+ importecm[20]+ importecm[21]+ importecm[22]+ importecm[23]+ importecm[24]+ importecm[25]+ importecm[26]+ importecm[27]+ importecm[28]+ importecm[29];
+					}
+				if (agrega > 30  && agrega < 32) {
+				    subtotal = importecm[0] + importecm[1] + importecm[2] + importecm[3] + importecm[4] + importecm[5]+ importecm[6]+ importecm[7]+ importecm[8]+ importecm[9]+ importecm[10]+ importecm[11]+ importecm[12]+ importecm[13]+ importecm[14]+ importecm[15]+ importecm[16]+ importecm[17]+ importecm[18]+ importecm[19]+ importecm[20]+ importecm[21]+ importecm[22]+ importecm[23]+ importecm[24]+ importecm[25]+ importecm[26]+ importecm[27]+ importecm[28]+ importecm[29]+ importecm[30];
+					}				
+				
+				iva16  =  subtotal  * 16 / 100;
+				
+ 				grantotal = iva16 + subtotal;
+				
+				
+				grantotalc = Integer.toString(grantotal);
+				iva16c = Integer.toString(iva16);
+				subtotalc = Integer.toString(subtotal);				
+				if (agrega < 7) {
+			CreaCotizacion ccn = new CreaCotizacion(cliente, cantidadc, unidadc, preciouc, descripcionc, contacto, telefono, email,lugar,fecha,diasc,descripcionev,box,fechaso,fechade,horariode,diasmo,diasev,clacificacion,fecmonta,horades,horariose,horariodesm,horariomont,cotizacion,importec,descripcionc0,descripcionc3, agrega,subtotalc,grantotalc,iva16c);
+				try {
+					ccn.creaCotizaSP(cliente, cantidadc, unidadc, preciouc, descripcionc, contacto, telefono, email,lugar,fecha,diasc,descripcionev,box,fechaso,fechade,horariode,diasmo,diasev,clacificacion,fecmonta,horades,horariose,horariodesm,horariomont,cotizacion,importec,descripcionc0,descripcionc3, agrega,subtotalc,grantotalc,iva16c);
+					st = "La cotizacion se genero Correctamente";
+					JOptionPane.showMessageDialog(null, st);
+					getPanelBotones().setVisible(true);
+					getPanelSolicitud().setVisible(false);
+					getPanelSolicitudc().getcliente().setText("");
+					getPanelSolicitudc().getnombredelevento().setText("");
+					getPanelSolicitudc().getlugars().setText("");
+					getPanelSolicitudc().getfechas().setText("");
+					getPanelSolicitudc().gettelefonos().setText("");
+					getPanelSolicitudc().getfechass().setText("");
+					getPanelSolicitudc().getfechasd().setText("");
+					getPanelSolicitudc().getHorariodes().setText("");
+					getPanelSolicitudc().getdiassm().setText("");
+					getPanelSolicitudc().getdiasse().setText("");
+					getPanelSolicitudc().getrazonsocial().setText("");
+					getPanelSolicitudc().getemails().setText("");
+					getPanelSolicitudc().getCotizacion().setText("");
+					getPanelSolicitudc().getFecmontal().setText("");
+					getPanelSolicitudc().gethorariomont().setText("");
+					getPanelSolicitudc().getHorariose().setText("");
+					getPanelSolicitud().getTextFieldDescripcion().setText("");
+					getPanelSolicitud().getTextFieldDescripcion0().setText("");
+					getPanelSolicitud().getTextFieldDescripcion3().setText("");
+					getPanelSolicitud().getTextFieldClacificacion().setText("");
+					getPanelSolicitud().getTextFieldUnidad().setText("");
+					getPanelSolicitud().getTextFieldPreciou().setText("");
+					getPanelSolicitud().getTextFieldUnidad().setText("");	
+					getPanelSolicitud().getcantidads().setValue(0);
+					getPanelSolicitud().getdiass().setValue(0);
+					getPanelSolicitud().textArea().setText("");
+					getPanelSolicitud().textArea().setText("");					
+						int control = 0 ;					
+					while (importec[control] != null ) {							
+					unidadc[control ] = "";
+					descripcionc[control] = "";
+					descripcionc0[control] = "";
+					descripcionc3[control] = "";
+					clacificacion[control] = "";		
+					precioucm[control] = 0;
+					diascm[control] =  0;
+					cantidadcm[control] =  0;
+					importecm[control] = 0;
+					importec[control] = "";					
+					diasc[control] = "";
+					cantidadc[control] = "";
+					preciouc[control] = "";					
+					control++;
+						}					
+					agrega = 0;
+					contprod = 0;
+				} catch (IOException e) {
+					e.printStackTrace();
+				} catch (DocumentException e) {
+					e.printStackTrace();
+				}
+				}
+				if (agrega > 6 && agrega < 13 ) {					
+					CreaCotizacion2 ccn = new CreaCotizacion2(cliente, cantidadc, unidadc, preciouc, descripcionc, contacto, telefono, email,lugar,fecha,diasc,descripcionev,box,fechaso,fechade,horariode,diasmo,diasev,clacificacion,fecmonta,horades,horariose,horariodesm,horariomont,cotizacion,importec,descripcionc0,descripcionc3, agrega,subtotalc,grantotalc,iva16c);
+						try {
+							ccn.creaCotizaSP(cliente, cantidadc, unidadc, preciouc, descripcionc, contacto, telefono, email,lugar,fecha,diasc,descripcionev,box,fechaso,fechade,horariode,diasmo,diasev,clacificacion,fecmonta,horades,horariose,horariodesm,horariomont,cotizacion,importec,descripcionc0,descripcionc3, agrega,subtotalc,grantotalc,iva16c);
+							st = "La cotizacion se genero Correctamente";
+							JOptionPane.showMessageDialog(null, st);
+							getPanelBotones().setVisible(true);
+							getPanelSolicitud().setVisible(false);
+							getPanelSolicitudc().getcliente().setText("");
+							getPanelSolicitudc().getnombredelevento().setText("");
+							getPanelSolicitudc().getlugars().setText("");
+							getPanelSolicitudc().getfechas().setText("");
+							getPanelSolicitudc().gettelefonos().setText("");
+							getPanelSolicitudc().getfechass().setText("");
+							getPanelSolicitudc().getfechasd().setText("");
+							getPanelSolicitudc().getHorariodes().setText("");
+							getPanelSolicitudc().getdiassm().setText("");
+							getPanelSolicitudc().getdiasse().setText("");
+							getPanelSolicitudc().getrazonsocial().setText("");
+							getPanelSolicitudc().getemails().setText("");
+							getPanelSolicitudc().getCotizacion().setText("");
+							getPanelSolicitudc().getFecmontal().setText("");
+							getPanelSolicitudc().gethorariomont().setText("");
+							getPanelSolicitudc().getHorariose().setText("");
+							getPanelSolicitud().getTextFieldDescripcion().setText("");
+							getPanelSolicitud().getTextFieldDescripcion0().setText("");
+							getPanelSolicitud().getTextFieldDescripcion3().setText("");
+							getPanelSolicitud().getTextFieldClacificacion().setText("");
+							getPanelSolicitud().getTextFieldUnidad().setText("");
+							getPanelSolicitud().getTextFieldPreciou().setText("");
+							getPanelSolicitud().getTextFieldUnidad().setText("");	
+							getPanelSolicitud().getcantidads().setValue(0);
+							getPanelSolicitud().getdiass().setValue(0);
+							getPanelSolicitud().textArea().setText("");
+							agrega = 0;
+							contprod = 0;
+						} catch (IOException e) {							
+							e.printStackTrace();
+						} catch (DocumentException e) {							
+							e.printStackTrace();
+						}
+					}
+		if (agrega > 12) {					
+					CreaCotizacion2 ccn = new CreaCotizacion2(cliente, cantidadc, unidadc, preciouc, descripcionc, contacto, telefono, email,lugar,fecha,diasc,descripcionev,box,fechaso,fechade,horariode,diasmo,diasev,clacificacion,fecmonta,horades,horariose,horariodesm,horariomont,cotizacion,importec,descripcionc0,descripcionc3, agrega,subtotalc,grantotalc,iva16c);
+						try {
+							ccn.creaCotizaSP(cliente, cantidadc, unidadc, preciouc, descripcionc, contacto, telefono, email,lugar,fecha,diasc,descripcionev,box,fechaso,fechade,horariode,diasmo,diasev,clacificacion,fecmonta,horades,horariose,horariodesm,horariomont,cotizacion,importec,descripcionc0,descripcionc3, agrega,subtotalc,grantotalc,iva16c);
+							st = "La cotizacion se genero Correctamente";
+							JOptionPane.showMessageDialog(null, st);
+							getPanelBotones().setVisible(true);
+							getPanelSolicitud().setVisible(false);
+							getPanelSolicitudc().getcliente().setText("");
+							getPanelSolicitudc().getnombredelevento().setText("");
+							getPanelSolicitudc().getlugars().setText("");
+							getPanelSolicitudc().getfechas().setText("");
+							getPanelSolicitudc().gettelefonos().setText("");
+							getPanelSolicitudc().getfechass().setText("");
+							getPanelSolicitudc().getfechasd().setText("");
+							getPanelSolicitudc().getHorariodes().setText("");
+							getPanelSolicitudc().getdiassm().setText("");
+							getPanelSolicitudc().getdiasse().setText("");
+							getPanelSolicitudc().getrazonsocial().setText("");
+							getPanelSolicitudc().getemails().setText("");
+							getPanelSolicitudc().getCotizacion().setText("");
+							getPanelSolicitudc().getFecmontal().setText("");
+							getPanelSolicitudc().gethorariomont().setText("");
+							getPanelSolicitudc().getHorariose().setText("");
+							getPanelSolicitud().getTextFieldDescripcion().setText("");
+							getPanelSolicitud().getTextFieldDescripcion0().setText("");
+							getPanelSolicitud().getTextFieldDescripcion3().setText("");
+							getPanelSolicitud().getTextFieldClacificacion().setText("");
+							getPanelSolicitud().getTextFieldUnidad().setText("");
+							getPanelSolicitud().getTextFieldPreciou().setText("");
+							getPanelSolicitud().getTextFieldUnidad().setText("");	
+							getPanelSolicitud().getcantidads().setValue(0);
+							getPanelSolicitud().getdiass().setValue(0);
+							getPanelSolicitud().textArea().setText("");
+							agrega = 0;
+							contprod = 0;
+						} catch (IOException e) {							
+							e.printStackTrace();
+						} catch (DocumentException e) {							
+							e.printStackTrace();
+						}
+						}			
+				}			
+		}
+		
+if (arg0.getSource() == getPanelSolicitudl().btnGeneracl()) {			
+			if(agregal < 1 ){
+				st = "Favor de agregar minimo 1 producto";
+				JOptionPane.showMessageDialog(null, st);
+			}else {				
+			CreaCotizacionl ccn = new CreaCotizacionl(clientel, cantidadcl, unidadcl, precioucl, descripcioncl, contactol, telefonol, emaill,lugarl,fechal,diascl,descripcionevl,boxl,domiciliorel,domicilioenl,fechasol,fechadel,horariodel,diasmol,diasevl);
+				try {
+					ccn.creaCotizaSPl(clientel, cantidadcl, unidadcl, precioucl, descripcioncl, contactol, telefonol, emaill,lugarl,fechal,diascl,descripcionevl,boxl,domiciliorel,domicilioenl,fechasol,fechadel,horariodel,diasmol,diasevl);
+					st = "La cotizacion se genero Correctamente";
+					JOptionPane.showMessageDialog(null, st);
+					getPanelBotones().setVisible(true);
+					getPanelSolicitudl().setVisible(false);
+					getPanelSolicitudl().getDescripcionl().setText("");
+					getPanelSolicitudl().getUnidadl().setText("");
+					getPanelSolicitudl().getPrecioul().setText("");
+					getPanelSolicitudl().getUnidadl().setText("");	
+					getPanelSolicitudl().textArea().setText("");
+					
+					agregal = 0;
+					contprodl = 0;
+				} catch (IOException e) {					
+					e.printStackTrace();
+				} catch (DocumentException e) {					
+					e.printStackTrace();
+				}				
+			}			
+		}
+if (arg0.getSource() == getPanelSolicitudContrato().BotonSiguientec()) {	
+	if(getPanelSolicitudContrato().getempresa().getText().equals("") || getPanelSolicitudContrato().getrepresental().getText().equals("")){
+		st = "Favor de llenar los campos solicitados";
+		JOptionPane.showMessageDialog(null, st);
+	}else {		
+		empresal = getPanelSolicitudContrato().getempresa().getText();
+		representall = getPanelSolicitudContrato().getrepresental().getText();
+		inotariall = getPanelSolicitudContrato().getinotarial().getText();
+		fechainl = getPanelSolicitudContrato().getfechain().getText();
+		licenciafl = getPanelSolicitudContrato().getlicenciaf().getText();
+		notariopl = getPanelSolicitudContrato().getnotariop().getText();
+		npdel = getPanelSolicitudContrato().getnpde().getText();
+		deledel = getPanelSolicitudContrato().getdelede().getText();
+		comerdel = getPanelSolicitudContrato().getcomerde().getText();
+		folioml = getPanelSolicitudContrato().getfoliom().getText();
+		fechafml = getPanelSolicitudContrato().getfechafm().getText();
+		domiciliol = getPanelSolicitudContrato().getdomicilio().getText();
+		rfcl = getPanelSolicitudContrato().getrfc().getText();
+		getPanelSolicitudContrato().getempresa().setText("");
+		getPanelSolicitudContrato().getrepresental().setText("");
+		getPanelSolicitudContrato().getinotarial().setText("");
+		getPanelSolicitudContrato().getfechain().setText("");
+		getPanelSolicitudContrato().getlicenciaf().setText("");
+		getPanelSolicitudContrato().getnotariop().setText("");
+		getPanelSolicitudContrato().getnpde().setText("");
+		getPanelSolicitudContrato().getdelede().setText("");
+		getPanelSolicitudContrato().getcomerde().setText("");
+		getPanelSolicitudContrato().getfoliom().setText("");
+		getPanelSolicitudContrato().getfechafm().setText("");
+		getPanelSolicitudContrato().getdomicilio().setText("");
+		getPanelSolicitudContrato().getrfc().setText("");
+		contrato ++;
+		getPanelSolicitudContrato().setVisible(false);
+		getPanelSolicitudContrato2().setVisible(true);
+	}	
+}
+
+if (arg0.getSource() == getPanelSolicitudContratosp().BotonSiguientec()) {	
+	if(getPanelSolicitudContratosp().getempresa().getText().equals("") || getPanelSolicitudContratosp().getrepresental().getText().equals("")){
+		st = "Favor de llenar los campos solicitados";
+		JOptionPane.showMessageDialog(null, st);
+	}else {
+		empresalsp = getPanelSolicitudContratosp().getempresa().getText();
+		representallsp = getPanelSolicitudContratosp().getrepresental().getText();
+		inotariallsp = getPanelSolicitudContratosp().getinotarial().getText();
+		fechainlsp = getPanelSolicitudContratosp().getfechain().getText();
+		licenciaflsp = getPanelSolicitudContratosp().getlicenciaf().getText();
+		notarioplsp = getPanelSolicitudContratosp().getnotariop().getText();
+		npdelsp = getPanelSolicitudContratosp().getnpde().getText();
+		deledelsp = getPanelSolicitudContratosp().getdelede().getText();
+		comerdelsp = getPanelSolicitudContratosp().getcomerde().getText();
+		foliomlsp = getPanelSolicitudContratosp().getfoliom().getText();
+		fechafmlsp = getPanelSolicitudContratosp().getfechafm().getText();
+		domiciliolsp = getPanelSolicitudContratosp().getdomicilio().getText();
+		rfclsp = getPanelSolicitudContratosp().getrfc().getText();
+		getPanelSolicitudContratosp().getempresa().setText("");
+		getPanelSolicitudContratosp().getrepresental().setText("");
+		getPanelSolicitudContratosp().getinotarial().setText("");
+		getPanelSolicitudContratosp().getfechain().setText("");
+		getPanelSolicitudContratosp().getlicenciaf().setText("");
+		getPanelSolicitudContratosp().getnotariop().setText("");
+		getPanelSolicitudContratosp().getnpde().setText("");
+		getPanelSolicitudContratosp().getdelede().setText("");
+		getPanelSolicitudContratosp().getcomerde().setText("");
+		getPanelSolicitudContratosp().getfoliom().setText("");
+		getPanelSolicitudContratosp().getfechafm().setText("");
+		getPanelSolicitudContratosp().getdomicilio().setText("");
+		getPanelSolicitudContratosp().getrfc().setText("");
+		contratosp ++;
+		getPanelSolicitudContratosp().setVisible(false);
+		getPanelSolicitudContrato2sp().setVisible(true);		
+	}	
+}
+
+if (arg0.getSource() == getPanelSolicitudContrato2().BotonSiguientec2()) {	
+	if(getPanelSolicitudContrato2().getmontot().getText().equals("") || getPanelSolicitudContrato2().getmensual().getText().equals("")){
+		st = "Favor de llenar los campos solicitados";
+		JOptionPane.showMessageDialog(null, st);
+	}else {		
+		fechacrl = getPanelSolicitudContrato2().getfechacr().getText();
+		fechaal = getPanelSolicitudContrato2().getfechaa().getText();
+		fechafcl = getPanelSolicitudContrato2().getfechafc().getText();
+		montotl = getPanelSolicitudContrato2().getmontot().getText();
+		mensuall = getPanelSolicitudContrato2().getmensual().getText();
+		getPanelSolicitudContrato2().getfechacr().setText("");
+		getPanelSolicitudContrato2().getfechaa().setText("");
+		getPanelSolicitudContrato2().getfechafc().setText("");
+		getPanelSolicitudContrato2().getmontot().setText("");
+		getPanelSolicitudContrato2().getmensual().setText("");
+		contrato2 ++;
+		getPanelSolicitudContrato2().setVisible(false);
+		getPanelSolicitudContrato3().setVisible(true);
+	}	
+}
+
+if (arg0.getSource() == getPanelSolicitudContrato2sp().BotonSiguientec2()) {	
+	if(getPanelSolicitudContrato2sp().getmontot().getText().equals("") || getPanelSolicitudContrato2sp().getmensual().getText().equals("")){
+		st = "Favor de llenar los campos solicitados";
+		JOptionPane.showMessageDialog(null, st);
+	}else {
+		fechacrlsp = getPanelSolicitudContrato2sp().getfechacr().getText();
+		fechaalsp = getPanelSolicitudContrato2sp().getfechaa().getText();
+		fechafclsp = getPanelSolicitudContrato2sp().getfechafc().getText();
+		montotlsp = getPanelSolicitudContrato2sp().getmontot().getText();
+		mensuallsp = getPanelSolicitudContrato2sp().getmensual().getText();
+		getPanelSolicitudContrato2sp().getfechacr().setText("");
+		getPanelSolicitudContrato2sp().getfechaa().setText("");
+		getPanelSolicitudContrato2sp().getfechafc().setText("");
+		getPanelSolicitudContrato2sp().getmontot().setText("");
+		getPanelSolicitudContrato2sp().getmensual().setText("");
+		contrato2sp ++;
+		getPanelSolicitudContrato2sp().setVisible(false);
+		getPanelSolicitudContrato3sp().setVisible(true);
+	}	
+}
+
+if (arg0.getSource() == getPanelSolicitudContrato3().BotonSiguientec3()) {	
+	if(getPanelSolicitudContrato3().gettexto1().getText().equals("")){
+		st = "Favor de llenar la descripcion";
+		JOptionPane.showMessageDialog(null, st);
+	}else {		
+		texto1l = getPanelSolicitudContrato3().gettexto1().getText();
+		texto2l = getPanelSolicitudContrato3().gettexto2().getText();
+		texto3l = getPanelSolicitudContrato3().gettexto3().getText();
+		texto4l = getPanelSolicitudContrato3().gettexto4().getText();
+		texto5l = getPanelSolicitudContrato3().gettexto5().getText();
+		texto6l = getPanelSolicitudContrato3().gettexto6().getText();
+		texto7l = getPanelSolicitudContrato3().gettexto7().getText();
+		CreaContrato cch = new CreaContrato(empresal, representall, inotariall, fechainl, licenciafl, notariopl, npdel,deledel,comerdel,folioml,fechafml,domiciliol,rfcl,fechacrl,fechaal,fechafcl,montotl,mensuall, texto1l, texto2l, texto3l, texto4l, texto5l, texto6l, texto7l);
+			try {
+				cch.creaHoja(empresal, representall, inotariall, fechainl, licenciafl, notariopl, npdel,deledel,comerdel,folioml,fechafml,domiciliol,rfcl,fechacrl,fechaal,fechafcl,montotl,mensuall, texto1l, texto2l, texto3l, texto4l, texto5l, texto6l, texto7l);
+				st = "El Contrato se genero Correctamente";
+				JOptionPane.showMessageDialog(null, st);
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (DocumentException e) {
+				e.printStackTrace();
+			}
+		getPanelSolicitudContrato3().gettexto1().setText("");
+		getPanelSolicitudContrato3().gettexto2().setText("");
+		getPanelSolicitudContrato3().gettexto3().setText("");
+		getPanelSolicitudContrato3().gettexto4().setText("");
+		getPanelSolicitudContrato3().gettexto5().setText("");
+		getPanelSolicitudContrato3().gettexto6().setText("");
+		getPanelSolicitudContrato3().gettexto7().setText("");
+		contrato3 ++;		
+		getPanelBotones().setVisible(true);
+		getPanelSolicitudContrato3sp().setVisible(false);		
+	}	
+}
+
+if (arg0.getSource() == getPanelSolicitudContrato3sp().BotonSiguientec3()) {
+	if(getPanelSolicitudContrato3sp().gettexto1().getText().equals("")){
+		st = "Favor de llenar la descripcion";
+		JOptionPane.showMessageDialog(null, st);
+	}else {
+		texto1lsp = getPanelSolicitudContrato3sp().gettexto1().getText();
+		texto2lsp = getPanelSolicitudContrato3sp().gettexto2().getText();
+		texto3lsp = getPanelSolicitudContrato3sp().gettexto3().getText();
+		texto4lsp = getPanelSolicitudContrato3sp().gettexto4().getText();
+		texto5lsp = getPanelSolicitudContrato3sp().gettexto5().getText();
+		texto6lsp = getPanelSolicitudContrato3sp().gettexto6().getText();
+		texto7lsp = getPanelSolicitudContrato3sp().gettexto7().getText();		
+		CreaContratosp cch = new CreaContratosp(empresalsp, representallsp, inotariallsp, fechainlsp, licenciaflsp, notarioplsp, npdelsp,deledelsp,comerdelsp,foliomlsp,fechafmlsp,domiciliolsp,rfclsp,fechacrlsp,fechaalsp,fechafclsp,montotlsp,mensuallsp, texto1lsp, texto2lsp, texto3lsp, texto4lsp, texto5lsp, texto6lsp, texto7lsp);
+			try {
+				cch.creaHoja(empresalsp, representallsp, inotariallsp, fechainlsp, licenciaflsp, notarioplsp, npdelsp,deledelsp,comerdelsp,foliomlsp,fechafmlsp,domiciliolsp,rfclsp,fechacrlsp,fechaalsp,fechafclsp,montotlsp,mensuallsp, texto1lsp, texto2lsp, texto3lsp, texto4lsp, texto5lsp, texto6lsp, texto7lsp);
+				st = "El Contrato se genero Correctamente";
+				JOptionPane.showMessageDialog(null, st);
+			} catch (IOException e) {			
+				e.printStackTrace();
+			} catch (DocumentException e) {
+				e.printStackTrace();
+			}
+		getPanelSolicitudContrato3sp().gettexto1().setText("");
+		getPanelSolicitudContrato3sp().gettexto2().setText("");
+		getPanelSolicitudContrato3sp().gettexto3().setText("");
+		getPanelSolicitudContrato3sp().gettexto4().setText("");
+		getPanelSolicitudContrato3sp().gettexto5().setText("");
+		getPanelSolicitudContrato3sp().gettexto6().setText("");
+		getPanelSolicitudContrato3sp().gettexto7().setText("");
+		contrato3 ++;		
+		getPanelBotones().setVisible(true);
+		getPanelSolicitudContrato3sp().setVisible(false);
+	}	
+}
+	
+		if (arg0.getSource() == getPanelBotones().getbtnCotizadorled()) {		
+			setBounds(350, 100, 862, 500);
+			getPanelBotones().setVisible(false);
+		}		
+		
+		if (arg0.getSource() == getPanelSolicitud().botonAgregar()){
+			if(getPanelSolicitud().getTextFieldPreciou().getText().equals("")){
+					st = "Debe llenar los campos solicitados";
+					JOptionPane.showMessageDialog(null, st);
+				}else{				
+				if(getPanelSolicitud().getTextFieldClacificacion().getText().equals("")) {
+					getPanelSolicitud().getTextFieldClacificacion().setText("     ");
+				}				
+				if(getPanelSolicitud().getTextFieldDescripcion().getText().equals("")) {
+					getPanelSolicitud().getTextFieldDescripcion().setText("       ---------------------------------------------");
+				}
+				if(getPanelSolicitud().getTextFieldDescripcion0().getText().equals("")) {
+					getPanelSolicitud().getTextFieldDescripcion0().setText("       ---------------------------------------------");
+				}
+				
+				if(getPanelSolicitud().getTextFieldDescripcion3().getText().equals("")) {
+					getPanelSolicitud().getTextFieldDescripcion3().setText("       ---------------------------------------------");
+				}
+				if(getPanelSolicitud().getTextFieldPreciou().getText().equals("")) {
+
+					getPanelSolicitud().getTextFieldPreciou().setText("0");
+
+				}
+					
+					unidadc[contprod] = getPanelSolicitud().getTextFieldUnidad().getText().toString();
+					descripcionc[contprod] = getPanelSolicitud().getTextFieldDescripcion().getText().toString();
+					descripcionc0[contprod] = getPanelSolicitud().getTextFieldDescripcion0().getText().toString();
+					descripcionc3[contprod] = getPanelSolicitud().getTextFieldDescripcion3().getText().toString();
+					clacificacion[contprod] = getPanelSolicitud().getTextFieldClacificacion().getText().toString();		
+					precioucm[contprod] = Integer.parseInt(getPanelSolicitud().getTextFieldPreciou().getText());
+					diascm[contprod] =  (Integer) getPanelSolicitud().getdiass().getValue();
+					cantidadcm[contprod] =   (Integer) getPanelSolicitud().getcantidads().getValue();
+					importecm[contprod] = cantidadcm[contprod] * precioucm[contprod]  *  diascm[contprod] ;
+					importec[contprod] = Integer.toString(importecm[contprod]);
+					diasc[contprod] = Integer.toString(diascm[contprod]);
+					cantidadc[contprod] = Integer.toString(cantidadcm[contprod]);
+					preciouc[contprod] = Integer.toString(precioucm[contprod]);
+					agrega ++; 	
+					getPanelSolicitud().textArea().setText(String.valueOf(getPanelSolicitud().textArea().getText() + "           " +clacificacion[contprod]+ "\n"  + cantidadc[contprod]   + " " + descripcionc0[contprod]+ " - "+ diasc[contprod] +  " " + "días" +"     "+"$     "+ importec[contprod]+"\n"));
+					contprod ++;
+						getPanelSolicitud().getTextFieldDescripcion().setText("");
+						getPanelSolicitud().getTextFieldDescripcion0().setText("");
+						getPanelSolicitud().getTextFieldDescripcion3().setText("");
+						getPanelSolicitud().getcantidads().setValue(0);
+						getPanelSolicitud().getTextFieldUnidad().setText("");
+						getPanelSolicitud().getTextFieldPreciou().setText("");
+						getPanelSolicitud().getTextFieldClacificacion().setText("");
+						getPanelSolicitud().getdiass().setValue(0);					
+					}		
+		}		
+		
+		if (arg0.getSource() == getPanelSolicitudl().botonAgregarl()){
+			if(getPanelSolicitudl().getDescripcionl().getText().equals("") || getPanelSolicitudl().getPrecioul().getText().equals("")){
+					st = "Debe llenar los campos solicitados";
+					JOptionPane.showMessageDialog(null, st);
+				}else{
+					cantidadcl[contprodl] = getPanelSolicitudl().getcantidadl().getComponentCount();
+					unidadcl[contprodl] = getPanelSolicitudl().getUnidadl().getText();
+					precioucl[contprodl] = getPanelSolicitudl().getPrecioul().getComponentCount();
+					descripcioncl[contprodl] = getPanelSolicitudl().getDescripcionl().getText();
+					agregal ++;
+						getPanelSolicitudl().textArea().setText(String.valueOf(getPanelSolicitudl().textArea().getText() + cantidadcl[contprodl]   + " " + descripcioncl[contprodl]+ " - "+ diascl[contprodl] +  " " + "días" + "\n"));
+						contprodl ++;						
+						getPanelSolicitudl().getDescripcionl().setText("");
+						getPanelSolicitudl().getcantidadl().setValue(0);
+						getPanelSolicitudl().getUnidadl().setText("");
+						getPanelSolicitudl().getPrecioul().setText("");
+					}		
+		}
+		if (arg0.getSource() == getPanelBotones().getBtnHojam()) {
+			setBounds(200, 0, 900, 720);			
+			getHojaMem().setVisible(true);
+			getPanelBotones().setVisible(false);
+			getPanelCabecera().setVisible(false);
+			getPanelSolicitud().setVisible(false);
+			getCambioUsuario().setVisible(true);
+		}
+		if (arg0.getSource() == getPanelBotones().getBtnCotizadorsp()) {
+			setBounds(350, 100, 862, 500);
+			getPanelBotones().setVisible(false);
+			getPanelSolicitudc().setVisible(true);
+		}
+
+		if (arg0.getSource() == getPanelBotones().getBtnContratos()) {
+			setBounds(350, 100, 862, 500);
+			getPanelBotones().setVisible(false);
+			getPanelSolicitudContrato().setVisible(true);
+		}
+
+		if (arg0.getSource() == getPanelBotones().getBtnbtnContratossp()) {
+			setBounds(350, 100, 862, 500);
+			getPanelBotones().setVisible(false);
+			getPanelSolicitudContratosp().setVisible(true);
+		}
+		
+		java.util.Date date = new java.util.Date();
+		java.text.SimpleDateFormat sdf=new java.text.SimpleDateFormat("yyyy-MM-dd");
+		
+		String fecha = sdf.format(date);
+
+		
+		
+		if (arg0.getSource() == getPanelSolicitudc().BotonSiguientec()) {
+			if(getPanelSolicitudc().getdiassm().getText().equals("") ||getPanelSolicitudc().getdiasse().getText().equals("") ||getPanelSolicitudc().getHorariodes().getText().equals("") ||getPanelSolicitudc().getfechasd().getText().equals("") ||getPanelSolicitudc().getfechass().getText().equals("") ||getPanelSolicitudc().getfechas().getText().equals("") ||getPanelSolicitudc().getnombredelevento().getText().equals("") ||getPanelSolicitudc().getlugars().getText().equals("") ||getPanelSolicitudc().getcliente().getText().equals("") || getPanelSolicitudc().getrazonsocial().getText().equals("") || getPanelSolicitudc().gettelefonos().getText().equals("")){
+				st = "Favor de llenar los campos solicitados";
+				JOptionPane.showMessageDialog(null, st);
+			}else{
+    		cliente = getPanelSolicitudc().getcliente().getText();
+			descripcionev = getPanelSolicitudc().getnombredelevento().getText();
+			fecha = getPanelSolicitudc().getfechas().getText();
+			lugar = getPanelSolicitudc().getlugars().getText();
+			contacto = getPanelSolicitudc().getrazonsocial().getText();
+			telefono = getPanelSolicitudc().gettelefonos().getText();
+			email = getPanelSolicitudc().getemails().getText();
+			fechaso = getPanelSolicitudc().getfechass().getText();
+			fechade = getPanelSolicitudc().getfechasd().getText();
+			horariode = getPanelSolicitudc().getHorariodes().getText();
+			diasmo = getPanelSolicitudc().getdiassm().getText();
+			diasev = getPanelSolicitudc().getdiasse().getText();
+			fecmonta = getPanelSolicitudc().getFecmontal().getText();
+			horades = getPanelSolicitudc().getHorariodes().getText();
+			horariose = getPanelSolicitudc().getHorariose().getText();
+			horariomont = getPanelSolicitudc().gethorariomont().getText();
+			horariodesm = getPanelSolicitudc().getHorariodes().getText();
+			cotizacion = getPanelSolicitudc().getCotizacion().getText();
+			getPanelBotones().setVisible(false);
+			getPanelSolicitud().textArea().setText(String.valueOf(getPanelSolicitud().textArea().getText() + cliente + "\n"));
+			getPanelSolicitud().setVisible(true);
+			getPanelSolicitudc().setVisible(false);
+			}
+		}
+		
+		if (arg0.getSource() == getPanelSolicitudContrato().BotonSiguientec()) {
+			setBounds(350, 100, 862, 500);
+			getPanelSolicitudContrato2().setVisible(true);
+			getPanelSolicitudContrato().setVisible(false);
+		}
+		
+if (arg0.getSource() == getPanelSolicitudContrato2().BotonSiguientec2()) {
+			setBounds(350, 100, 862, 500);
+			getPanelSolicitudContrato2().setVisible(false);
+			getPanelSolicitudContrato().setVisible(false);
+			getPanelSolicitudContrato3().setVisible(true);
+		}
+		
+	
+		
+		if (arg0.getSource() == getHojaMem().getbotonGenerar()) {
+			if(getHojaMem().getjtextArea().getText().equals("")){
+				st = "Favor de Agregar Texto";
+				JOptionPane.showMessageDialog(null, st);
+			}else{		
+			contenido = getHojaMem().getjtextArea().getText();
+			contenido2 = getHojaMem().getjtextArea2().getText();
+			contenido3 = getHojaMem().getjtextArea3().getText();
+			contenido4 = getHojaMem().getjtextArea4().getText();
+			contenido5 = getHojaMem().getjtextArea5().getText();
+			contenido6 = getHojaMem().getjtextArea6().getText();
+			contenido7 = getHojaMem().getjtextArea7().getText();
+			contenido8 = getHojaMem().getjtextArea8().getText();
+			contenido9 = getHojaMem().getjtextArea9().getText();
+			contenido10 = getHojaMem().getjtextArea10().getText();
+			contenido11 = getHojaMem().getjtextArea11().getText();
+			contenido12 = getHojaMem().getjtextArea12().getText();
+			contenido13 = getHojaMem().getjtextArea13().getText();
+			contenido14 = getHojaMem().getjtextArea14().getText();
+			contenido15 = getHojaMem().getjtextArea15().getText();
+			contenido16 = getHojaMem().getjtextArea16().getText();
+			contenido17 = getHojaMem().getjtextArea17().getText();
+			contenido18 = getHojaMem().getjtextArea18().getText();
+			contenido19 = getHojaMem().getjtextArea19().getText();
+			contenido20 = getHojaMem().getjtextArea20().getText();
+			contenido21 = getHojaMem().getjtextArea21().getText();
+			contenido22 = getHojaMem().getjtextArea22().getText();
+			contenido23 = getHojaMem().getjtextArea23().getText();
+			contenido24 = getHojaMem().getjtextArea24().getText();
+			contenido25 = getHojaMem().getjtextArea25().getText();
+			contenido26 = getHojaMem().getjtextArea26().getText();
+			contenido27 = getHojaMem().getjtextArea27().getText();
+			contenido28 = getHojaMem().getjtextArea28().getText();
+			contenido29 = getHojaMem().getjtextArea29().getText();
+			contenido30 = getHojaMem().getjtextArea30().getText();
+			contenido31 = getHojaMem().getjtextArea31().getText();
+			contenido32 = getHojaMem().getjtextArea32().getText();
+			contenido33 = getHojaMem().getjtextArea33().getText();
+			contenido34 = getHojaMem().getjtextArea34().getText();
+			contenido35 = getHojaMem().getjtextArea35().getText();
+			contenido36 = getHojaMem().getjtextArea36().getText();
+			contenido37 = getHojaMem().getjtextArea37().getText();
+			contenido38 = getHojaMem().getjtextArea37().getText();
+			contenido39 = getHojaMem().getjtextArea37().getText();
+			contenido40 = getHojaMem().getjtextArea37().getText();
+			contenido41 = getHojaMem().getjtextArea37().getText();
+			contenido42 = getHojaMem().getjtextArea37().getText();
+			contenido43 = getHojaMem().getjtextArea37().getText();
+			contenido44 = getHojaMem().getjtextArea37().getText();
+			contenido45 = getHojaMem().getjtextArea37().getText();
+			contenido46 = getHojaMem().getjtextArea37().getText();
+			contenido47 = getHojaMem().getjtextArea37().getText();
+			contenido48 = getHojaMem().getjtextArea37().getText();
+			contenido49 = getHojaMem().getjtextArea37().getText();
+			contenido50 = getHojaMem().getjtextArea37().getText();
+			contenido51 = getHojaMem().getjtextArea37().getText();	 		
+			descripcionh = getHojaMem().gettextDescripcionh().getText();			
+			CreaHoja cch = new CreaHoja(contenido,contenido2,contenido3,contenido4,contenido5,contenido6,contenido7,contenido8,contenido9,contenido10,contenido11,contenido12,contenido13,contenido14,contenido15,contenido16,contenido17,contenido18,contenido19,contenido20,contenido21,contenido22,contenido23,contenido24,contenido25,contenido26,contenido27,contenido28,contenido29,contenido30,contenido31,contenido32,contenido33,contenido34,contenido35,contenido36,contenido37,contenido38,contenido39,contenido40,contenido41,contenido42,contenido43,contenido44,contenido45,contenido46,contenido47,contenido48,contenido49,contenido50,contenido51,descripcionh);
+			try {
+				cch.creaHojaMem(contenido,contenido2,contenido3,contenido4,contenido5,contenido6,contenido7,contenido8,contenido9,contenido10,contenido11,contenido12,contenido13,contenido14,contenido15,contenido16,contenido17,contenido18,contenido19,contenido20,contenido21,contenido22,contenido23,contenido24,contenido25,contenido26,contenido27,contenido28,contenido29,contenido30,contenido31,contenido32,contenido33,contenido34,contenido35,contenido36,contenido37,contenido38,contenido39,contenido40,contenido41,contenido42,contenido43,contenido44,contenido45,contenido46,contenido47,contenido48,contenido49,contenido50,contenido51,descripcionh);
+			} catch (IOException e) {			
+				e.printStackTrace();
+			} catch (DocumentException e) {				
+				e.printStackTrace();
+			}
+			st = "El archivo se Genero correctamente";
+			JOptionPane.showMessageDialog(null, st);
+			setBounds(350, 100, 880, 500);
+			getPanelCabecera().setVisible(true);
+			getPanelBotones().setVisible(true);
+			getPanelSolicitud().setVisible(false);
+			getHojaMem().setVisible(false);			
+			getHojaMem().getjtextArea().setText("");
+			getHojaMem().getjtextArea2().setText("");
+			getHojaMem().getjtextArea3().setText("");
+			getHojaMem().getjtextArea4().setText("");
+			getHojaMem().getjtextArea5().setText("");
+			getHojaMem().getjtextArea6().setText("");
+			getHojaMem().getjtextArea7().setText("");
+			getHojaMem().getjtextArea8().setText("");
+			getHojaMem().getjtextArea9().setText("");
+			getHojaMem().getjtextArea10().setText("");
+			getHojaMem().getjtextArea11().setText("");
+			getHojaMem().getjtextArea12().setText("");
+			getHojaMem().getjtextArea13().setText("");
+			getHojaMem().getjtextArea14().setText("");
+			getHojaMem().getjtextArea15().setText("");
+			getHojaMem().getjtextArea16().setText("");
+			getHojaMem().getjtextArea17().setText("");
+			getHojaMem().getjtextArea18().setText("");
+			getHojaMem().getjtextArea19().setText("");
+			getHojaMem().getjtextArea20().setText("");
+			getHojaMem().getjtextArea21().setText("");
+			getHojaMem().getjtextArea22().setText("");
+			getHojaMem().getjtextArea23().setText("");
+			getHojaMem().getjtextArea24().setText("");
+			getHojaMem().getjtextArea25().setText("");
+			getHojaMem().getjtextArea26().setText("");
+			getHojaMem().getjtextArea27().setText("");
+			getHojaMem().getjtextArea28().setText("");
+			getHojaMem().getjtextArea29().setText("");
+			getHojaMem().getjtextArea30().setText("");
+			getHojaMem().getjtextArea31().setText("");
+			getHojaMem().getjtextArea32().setText("");
+			getHojaMem().getjtextArea33().setText("");
+			getHojaMem().getjtextArea34().setText("");
+			getHojaMem().getjtextArea35().setText("");
+			getHojaMem().getjtextArea36().setText("");
+			getHojaMem().getjtextArea37().setText("");
+			getHojaMem().getjtextArea38().setText("");
+			getHojaMem().getjtextArea39().setText("");
+			getHojaMem().getjtextArea40().setText("");
+			getHojaMem().getjtextArea41().setText("");
+			getHojaMem().getjtextArea42().setText("");
+			getHojaMem().getjtextArea43().setText("");
+			getHojaMem().getjtextArea44().setText("");
+			getHojaMem().getjtextArea45().setText("");
+			getHojaMem().getjtextArea46().setText("");
+			getHojaMem().getjtextArea47().setText("");
+			getHojaMem().getjtextArea48().setText("");
+			getHojaMem().getjtextArea49().setText("");
+			getHojaMem().getjtextArea50().setText("");
+			getHojaMem().getjtextArea51().setText("");			
+			getHojaMem().gettextDescripcionh().setText("");
+			}			
+		}
+		
+		if (arg0.getSource() == getPanelSolicitud().btnNueva()) {			
+	getPanelBotones().setVisible(true);
+	getPanelSolicitud().setVisible(false);
+	getPanelSolicitudc().setVisible(false);
+	getPanelSolicitudc().getcliente().setText("");
+	getPanelSolicitudc().getnombredelevento().setText("");
+	getPanelSolicitudc().getlugars().setText("");
+	getPanelSolicitudc().getfechas().setText("");
+	getPanelSolicitudc().gettelefonos().setText("");
+	getPanelSolicitudc().getfechass().setText("");	
+	getPanelSolicitudc().getfechasd().setText("");
+	getPanelSolicitudc().getHorariodes().setText("");
+	getPanelSolicitudc().getdiassm().setText("");
+	getPanelSolicitudc().getdiasse().setText("");
+	getPanelSolicitudc().getrazonsocial().setText("");
+	getPanelSolicitudc().getemails().setText("");
+	getPanelSolicitudc().getCotizacion().setText("");
+	getPanelSolicitudc().getFecmontal().setText("");
+	getPanelSolicitudc().gethorariomont().setText("");
+	getPanelSolicitudc().getHorariose().setText("");
+	getPanelSolicitud().getTextFieldDescripcion().setText("");
+	getPanelSolicitud().getTextFieldDescripcion0().setText("");
+	getPanelSolicitud().getTextFieldDescripcion3().setText("");
+	getPanelSolicitud().getTextFieldClacificacion().setText("");
+	getPanelSolicitud().getTextFieldUnidad().setText("");
+	getPanelSolicitud().getTextFieldPreciou().setText("");
+	getPanelSolicitud().getTextFieldUnidad().setText("");	
+	getPanelSolicitud().getcantidads().setValue(0);
+	getPanelSolicitud().getdiass().setValue(0);
+	getPanelSolicitud().textArea().setText("");
+	getPanelSolicitud().textArea().setText("");	
+		int control = 0 ;	
+	while (importec[control] != null ) {			
+	unidadc[control ] = "";
+	descripcionc[control] = "";
+	descripcionc0[control] = "";
+	descripcionc3[control] = "";
+	clacificacion[control] = "";		
+	precioucm[control] = 0;
+	diascm[control] =  0;
+	cantidadcm[control] =  0;
+	importecm[control] = 0;
+	importec[control] = "";	
+	diasc[control] = "";
+	cantidadc[control] = "";
+	preciouc[control] = "";	
+	control++;
+		}
+	}
+		
+		
+		if (arg0.getSource() == getPanelSolicitud().btnNueva()) {			
+	getPanelBotones().setVisible(true);
+	getPanelSolicitud().setVisible(false);
+	getPanelSolicitudc().setVisible(false);
+	getPanelSolicitudc().getcliente().setText("");
+	getPanelSolicitudc().getnombredelevento().setText("");
+	getPanelSolicitudc().getlugars().setText("");
+	getPanelSolicitudc().getfechas().setText("");
+	getPanelSolicitudc().gettelefonos().setText("");
+	getPanelSolicitudc().getfechass().setText("");	
+	getPanelSolicitudc().getfechasd().setText("");
+	getPanelSolicitudc().getHorariodes().setText("");
+	getPanelSolicitudc().getdiassm().setText("");
+	getPanelSolicitudc().getdiasse().setText("");
+	getPanelSolicitudc().getrazonsocial().setText("");
+	getPanelSolicitudc().getemails().setText("");
+	getPanelSolicitudc().getCotizacion().setText("");
+	getPanelSolicitudc().getFecmontal().setText("");
+	getPanelSolicitudc().gethorariomont().setText("");
+	getPanelSolicitudc().getHorariose().setText("");
+	getPanelSolicitud().getTextFieldDescripcion().setText("");
+	getPanelSolicitud().getTextFieldDescripcion0().setText("");
+	getPanelSolicitud().getTextFieldDescripcion3().setText("");
+	getPanelSolicitud().getTextFieldClacificacion().setText("");
+	getPanelSolicitud().getTextFieldUnidad().setText("");
+	getPanelSolicitud().getTextFieldPreciou().setText("");
+	getPanelSolicitud().getTextFieldUnidad().setText("");	
+	getPanelSolicitud().getcantidads().setValue(0);
+	getPanelSolicitud().getdiass().setValue(0);
+	getPanelSolicitud().textArea().setText("");
+	getPanelSolicitud().textArea().setText("");	
+		int control = 0 ;	
+	while (importec[control] != null ) {			
+	unidadc[control ] = "";
+	descripcionc[control] = "";
+	descripcionc0[control] = "";
+	descripcionc3[control] = "";
+	clacificacion[control] = "";		
+	precioucm[control] = 0;
+	diascm[control] =  0;
+	cantidadcm[control] =  0;
+	importecm[control] = 0;
+	importec[control] = "";	
+	diasc[control] = "";
+	cantidadc[control] = "";
+	preciouc[control] = "";	
+	control++;
+	}
+}
+		
+		if (arg0.getSource() == getPanelListaCotizacion().btnNueva()) {			
+		
+			getPanelBotones().setVisible(true);
+			getPanelListaCotizacion().setVisible(false);
+			}
+		
+		
+		
+		if (arg0.getSource() == getPanelSolicitudc().btnNueva()) {
+			getPanelBotones().setVisible(true);
+			getPanelSolicitud().setVisible(false);
+			getPanelSolicitudc().setVisible(false);
+			getPanelSolicitudc().getcliente().setText("");
+			getPanelSolicitudc().getnombredelevento().setText("");
+			getPanelSolicitudc().getlugars().setText("");
+			getPanelSolicitudc().getfechas().setText("");
+			getPanelSolicitudc().gettelefonos().setText("");
+			getPanelSolicitudc().getfechass().setText("");
+			getPanelSolicitudc().getfechasd().setText("");
+			getPanelSolicitudc().getHorariodes().setText("");
+			getPanelSolicitudc().getdiassm().setText("");
+			getPanelSolicitudc().getdiasse().setText("");
+			getPanelSolicitudc().getrazonsocial().setText("");
+			getPanelSolicitudc().getemails().setText("");
+			getPanelSolicitudc().getCotizacion().setText("");
+			getPanelSolicitudc().getFecmontal().setText("");
+			getPanelSolicitudc().gethorariomont().setText("");
+			getPanelSolicitudc().getHorariose().setText("");
+			getPanelSolicitud().getTextFieldDescripcion().setText("");
+			getPanelSolicitud().getTextFieldDescripcion0().setText("");
+			getPanelSolicitud().getTextFieldDescripcion3().setText("");
+			getPanelSolicitud().getTextFieldClacificacion().setText("");
+			getPanelSolicitud().getTextFieldUnidad().setText("");
+			getPanelSolicitud().getTextFieldPreciou().setText("");
+			getPanelSolicitud().getTextFieldUnidad().setText("");	
+			getPanelSolicitud().getcantidads().setValue(0);
+			getPanelSolicitud().getdiass().setValue(0);
+			getPanelSolicitud().textArea().setText("");
+			getPanelSolicitud().textArea().setText("");			
+				int control = 0 ;			
+			while (importec[control] != null ) {					
+			unidadc[control ] = "";
+			descripcionc[control] = "";
+			descripcionc0[control] = "";
+			descripcionc3[control] = "";
+			clacificacion[control] = "";		
+			precioucm[control] = 0;
+			diascm[control] =  0;
+			cantidadcm[control] =  0;
+			importecm[control] = 0;
+			importec[control] = "";			
+			diasc[control] = "";
+			cantidadc[control] = "";
+			preciouc[control] = "";			
+			control++;
+			}
+		}
+	}	
+
+
+
+
+	
+	public void mouseDragged(MouseEvent arg0) {
+
+	}
+
+	
+	public void mouseMoved(MouseEvent arg0) {
+
+	}
+
+	
+	public void focusGained(FocusEvent arg0) {
+
+	}
+
+	
+	public void focusLost(FocusEvent arg0) {
+	}
+
+	
+	public void windowActivated(WindowEvent arg0) {
+	
+
+	}
+
+	
+	public void windowClosed(WindowEvent arg0) {
+		
+
+	}
+
+	
+	public void windowClosing(WindowEvent arg0) {
+		
+
+	}
+
+	
+	public void windowDeactivated(WindowEvent arg0) {
+		
+
+	}
+
+	
+	public void windowDeiconified(WindowEvent arg0) {
+
+	}
+
+	
+	public void windowIconified(WindowEvent arg0) {
+
+	}
+
+	
+	public void windowOpened(WindowEvent arg0) {
+
+	}
+
+	
+
+
+
+	public String getIdUser() {
+		return this.user;
+	}
+
+	public void setIdUser(String idUser) {
+		Principal.idUser = usuario;
+		this.user = idUser;
+	}
+
+	@Override
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+}
