@@ -33,10 +33,6 @@ public class PanelSolicitudContratosp extends JPanel{
 	private JLabel lblDatosDelCliente;
 	private JButton btnNueva;
 	private JDateChooser dteInstPub = new JDateChooser();
-	private JSeparator separator;
-	private JLabel lblDatosDelPrestador;
-	private JLabel lblrfcPrestador;
-	private JTextField txtRFCPrestador;
 	private JLabel lblciudadNotarioPublico;
 	private JTextField txtCiudadInstPublico;
 
@@ -71,7 +67,8 @@ public class PanelSolicitudContratosp extends JPanel{
 	public JTextField gettxtRepreLegal(){
 		if(txtRepreLegal == null){
 			txtRepreLegal = new JTextField();
-			txtRepreLegal.setBounds(482, 30, 160, 20);
+			txtRepreLegal.setToolTipText("Nombre del representante legal, comenzando por el cargo de la persona, ejemplo: representante ...");
+			txtRepreLegal.setBounds(187, 97, 228, 20);
 		}
 		return txtRepreLegal;
 	}
@@ -80,7 +77,8 @@ public class PanelSolicitudContratosp extends JPanel{
 	public JTextField gettxtLicenciado(){
 		if(txtLicenciado == null){
 			txtLicenciado = new JTextField();
-			txtLicenciado.setBounds(187, 121, 160, 20);
+			txtLicenciado.setToolTipText("Nombre del licenciado que da fe");
+			txtLicenciado.setBounds(187, 242, 160, 20);
 		}
 		return txtLicenciado;
 	}
@@ -90,7 +88,8 @@ public class PanelSolicitudContratosp extends JPanel{
 	public JTextField gettxtNombreEmpresa(){
 		if(txtNombreEmpresa == null){
 			txtNombreEmpresa = new JTextField();
-			txtNombreEmpresa.setBounds(187, 30, 160, 20);
+			txtNombreEmpresa.setToolTipText("Nombre de la empresa ");
+			txtNombreEmpresa.setBounds(187, 30, 457, 20);
 		}
 		return txtNombreEmpresa;
 	}
@@ -99,7 +98,8 @@ public class PanelSolicitudContratosp extends JPanel{
 	public JTextField gettxtObjSocial(){
 		if(txtObjSocial == null){
 			txtObjSocial = new JTextField();
-			txtObjSocial.setBounds(187, 90, 160, 20);
+			txtObjSocial.setToolTipText("Objeto social de la empresa del cliente");
+			txtObjSocial.setBounds(187, 128, 457, 20);
 		}
 		return txtObjSocial;
 	}
@@ -107,7 +107,8 @@ public class PanelSolicitudContratosp extends JPanel{
 	public JTextField gettxtInstPublico(){
 		if(txtInstPublico == null){
 			txtInstPublico = new JTextField();
-			txtInstPublico.setBounds(482, 91, 160, 20);
+			txtInstPublico.setToolTipText("N\u00FAmero del instrumento p\u00FAblico");
+			txtInstPublico.setBounds(187, 179, 160, 20);
 		}
 		return txtInstPublico;
 	}
@@ -117,7 +118,8 @@ public class PanelSolicitudContratosp extends JPanel{
 	public JTextField gettxtDomiclioEmpresa(){
 		if(txtDomiclioEmpresa == null){
 			txtDomiclioEmpresa = new JTextField();
-			txtDomiclioEmpresa.setBounds(482, 60, 160, 20);
+			txtDomiclioEmpresa.setToolTipText("Domicilio donde esta ubicada la empresa");
+			txtDomiclioEmpresa.setBounds(187, 66, 457, 20);
 		}
 		return txtDomiclioEmpresa;
 	}
@@ -125,7 +127,8 @@ public class PanelSolicitudContratosp extends JPanel{
 	public JTextField gettxtNotPcoFe(){
 		if(txtNotPcoFe == null){
 			txtNotPcoFe = new JTextField();
-			txtNotPcoFe.setBounds(187, 150, 160, 20);
+			txtNotPcoFe.setToolTipText("N\u00FAmero de notario que da fe");
+			txtNotPcoFe.setBounds(484, 210, 160, 20);
 		}
 		return txtNotPcoFe;
 	}
@@ -133,7 +136,8 @@ public class PanelSolicitudContratosp extends JPanel{
 	public JTextField gettxtRfc(){
 		if(txtRfc == null){
 			txtRfc = new JTextField();
-			txtRfc.setBounds(187, 60, 160, 20);
+			txtRfc.setToolTipText("RFC de la empresa");
+			txtRfc.setBounds(484, 97, 160, 20);
 		}
 		return txtRfc;
 	}
@@ -145,7 +149,8 @@ public class PanelSolicitudContratosp extends JPanel{
 	public JDateChooser getDteInstrumentoPublico() {
 		if(dteInstPub == null) {
 			dteInstPub = new JDateChooser();
-			dteInstPub.setBounds(482, 120, 160, 20);
+			dteInstPub.setToolTipText("Fecha de expedici\u00F3n del instrumento p\u00FAblico");
+			dteInstPub.setBounds(187, 210, 160, 20);
 			Clientecon.add(dteInstPub);
 			
 		}
@@ -167,6 +172,10 @@ public class PanelSolicitudContratosp extends JPanel{
 			Clientecon.setBackground(Color.WHITE);
 			Clientecon.setBounds(-20, 0, 820, 275);
 			Clientecon.setLayout(null);
+			
+						dteInstPub = new JDateChooser();
+						dteInstPub.setBounds(187, 210, 160, 20);
+						Clientecon.add(dteInstPub);
 			Clientecon.add(gettxtDomiclioEmpresa());
 			Clientecon.add(gettxtInstPublico());
 			Clientecon.add(gettxtLicenciado());
@@ -182,21 +191,21 @@ public class PanelSolicitudContratosp extends JPanel{
 			JLabel lblContacto = new JLabel("*Representante legal:");
 			lblContacto.setForeground(new Color(0, 70, 129));
 			lblContacto.setFont(new Font("Arial", Font.BOLD, 12));
-			lblContacto.setBounds(355, 30, 139, 14);
+			lblContacto.setBounds(60, 97, 139, 14);
 			Clientecon.add(lblContacto);
 			
 			
 			JLabel lblTelefono = new JLabel("*Instrumento publico:");
 			lblTelefono.setForeground(new Color(0, 70, 129));
 			lblTelefono.setFont(new Font("Arial", Font.BOLD, 12));
-			lblTelefono.setBounds(355, 91, 139, 14);
+			lblTelefono.setBounds(60, 179, 139, 14);
 			Clientecon.add(lblTelefono);
 			
 			
 			JLabel lblEmail = new JLabel("*Fecha inst. publico:");
 			lblEmail.setForeground(new Color(0, 70, 129));  
 			lblEmail.setFont(new Font("Arial", Font.BOLD, 12));
-			lblEmail.setBounds(355, 120, 154, 14);
+			lblEmail.setBounds(60, 209, 154, 14);
 			Clientecon.add(lblEmail);
 			
 			JLabel lblcompañia = new JLabel("*Empresa:");
@@ -208,13 +217,13 @@ public class PanelSolicitudContratosp extends JPanel{
 			JLabel lblfecha = new JLabel("*Objeto Social:");
 			lblfecha.setForeground(new Color(0, 70, 129));
 			lblfecha.setFont(new Font("Arial", Font.BOLD, 12));
-			lblfecha.setBounds(60, 90, 154, 14);
+			lblfecha.setBounds(60, 128, 154, 14);
 			Clientecon.add(lblfecha);
 			
 			JLabel lbllugar = new JLabel("*Licenciado:");
 			lbllugar.setForeground(new Color(0, 70, 129));
 			lbllugar.setFont(new Font("Arial", Font.BOLD, 12));
-			lbllugar.setBounds(60, 120, 117, 14);
+			lbllugar.setBounds(60, 241, 117, 14);
 			Clientecon.add(lbllugar);
 			
 			
@@ -223,15 +232,15 @@ public class PanelSolicitudContratosp extends JPanel{
 			JLabel lbldomicilioRecogida = new JLabel("*Notario. P. que da fe:");
 			lbldomicilioRecogida.setForeground(new Color(0, 70, 129));
 			lbldomicilioRecogida.setFont(new Font("Arial", Font.BOLD, 12));
-			lbldomicilioRecogida.setBounds(60, 150, 123, 20);
+			lbldomicilioRecogida.setBounds(357, 210, 123, 20);
 			Clientecon.add(lbldomicilioRecogida);
 			
 		
 			
-			JLabel lblfechaDeDesmontaje = new JLabel("*RFC cliente:");
+			JLabel lblfechaDeDesmontaje = new JLabel("*RFC:");
 			lblfechaDeDesmontaje.setForeground(new Color(0, 70, 129));
 			lblfechaDeDesmontaje.setFont(new Font("Arial", Font.BOLD, 12));
-			lblfechaDeDesmontaje.setBounds(60, 60, 106, 14);
+			lblfechaDeDesmontaje.setBounds(433, 97, 106, 14);
 			Clientecon.add(lblfechaDeDesmontaje);
 			
 
@@ -239,7 +248,7 @@ public class PanelSolicitudContratosp extends JPanel{
 			JLabel lblDomicilio = new JLabel("*Domicilio empresa:");
 			lblDomicilio.setForeground(new Color(0, 70, 129));
 			lblDomicilio.setFont(new Font("Arial", Font.BOLD, 12));
-			lblDomicilio.setBounds(355, 60, 115, 14);
+			lblDomicilio.setBounds(60, 66, 115, 14);
 			Clientecon.add(lblDomicilio);
 			Clientecon.add(getLblDatosDelCliente());
 			
@@ -248,14 +257,6 @@ public class PanelSolicitudContratosp extends JPanel{
 			btnNueva.setBounds(702, 4, 76, 70);
 			btnNueva.setName("btnNueva");			
 			Clientecon.add(btnNueva);
-
-			dteInstPub = new JDateChooser();
-			dteInstPub.setBounds(482, 120, 160, 20);
-			Clientecon.add(dteInstPub);
-			Clientecon.add(getSeparator());
-			Clientecon.add(getLblDatosDelPrestador());
-			Clientecon.add(getLblrfcPrestador());
-			Clientecon.add(getTxtRFCPrestador());
 			Clientecon.add(getLblciudadNotarioPublico());
 			Clientecon.add(getTxtCiudadInstPublico());
 			
@@ -295,51 +296,20 @@ public class PanelSolicitudContratosp extends JPanel{
 		}
 		return lblDatosDelCliente;
 	}
-	private JSeparator getSeparator() {
-		if (separator == null) {
-			separator = new JSeparator();
-			separator.setBounds(44, 189, 716, 2);
-		}
-		return separator;
-	}
-	private JLabel getLblDatosDelPrestador() {
-		if (lblDatosDelPrestador == null) {
-			lblDatosDelPrestador = new JLabel("Datos del prestador");
-			lblDatosDelPrestador.setForeground(Color.GRAY);
-			lblDatosDelPrestador.setFont(new Font("Arial", Font.BOLD, 12));
-			lblDatosDelPrestador.setBounds(343, 199, 117, 14);
-		}
-		return lblDatosDelPrestador;
-	}
-	private JLabel getLblrfcPrestador() {
-		if (lblrfcPrestador == null) {
-			lblrfcPrestador = new JLabel("*RFC prestador");
-			lblrfcPrestador.setForeground(new Color(0, 70, 129));
-			lblrfcPrestador.setFont(new Font("Arial", Font.BOLD, 12));
-			lblrfcPrestador.setBounds(65, 226, 106, 14);
-		}
-		return lblrfcPrestador;
-	}
-	public JTextField getTxtRFCPrestador() {
-		if (txtRFCPrestador == null) {
-			txtRFCPrestador = new JTextField();
-			txtRFCPrestador.setBounds(190, 224, 160, 20);
-		}
-		return txtRFCPrestador;
-	}
 	private JLabel getLblciudadNotarioPublico() {
 		if (lblciudadNotarioPublico == null) {
 			lblciudadNotarioPublico = new JLabel("*Ciudad inst. publico:");
 			lblciudadNotarioPublico.setForeground(new Color(0, 70, 129));
 			lblciudadNotarioPublico.setFont(new Font("Arial", Font.BOLD, 12));
-			lblciudadNotarioPublico.setBounds(355, 150, 123, 20);
+			lblciudadNotarioPublico.setBounds(357, 179, 123, 20);
 		}
 		return lblciudadNotarioPublico;
 	}
 	public JTextField getTxtCiudadInstPublico() {
 		if (txtCiudadInstPublico == null) {
 			txtCiudadInstPublico = new JTextField();
-			txtCiudadInstPublico.setBounds(482, 150, 160, 20);
+			txtCiudadInstPublico.setToolTipText("Ciudad donde se expide el instrumento p\u00FAblico");
+			txtCiudadInstPublico.setBounds(484, 179, 160, 20);
 		}
 		return txtCiudadInstPublico;
 	}
@@ -355,7 +325,6 @@ public class PanelSolicitudContratosp extends JPanel{
 		gettxtRfc().setText(vacio);
 		gettxtObjSocial().setText(vacio);
 		gettxtDomiclioEmpresa().setText(vacio);
-		getTxtRFCPrestador().setText(vacio);
 		getTxtCiudadInstPublico().setText(vacio);
 		getDteInstrumentoPublico().setDate(null);
 	}

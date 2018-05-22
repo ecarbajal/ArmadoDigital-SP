@@ -245,7 +245,7 @@ public class CreaContratosp {
 	        Arial.setSize(11.0f);
 	        Arial.setStyle(1);
 	        phraset = new Phrase(c0empresa);	
-	        ColumnText.showTextAligned(canvas, 40, phraset, 100.0f, 600.0f, 0.0f);
+	        ColumnText.showTextAligned(canvas, 50, phraset, 200.0f, 500.0f, 0.0f);
 	        System.out.println("Generando empresa: " + phraset);
 	        
 	        

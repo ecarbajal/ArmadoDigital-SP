@@ -26,7 +26,8 @@ public class CreaContratoSPv2 {
 
 	 public void creaHoja(String nombreEmpresa, String representanteLegal, String instrumentoPublico, String fechaInstPublico, String notarioPublico,
 			 String licenciado, String rfc, String objetoSocial, String domicilioEmpresa, String rfcPrestador,
-			 String nombreEvento, String diasNaturalesPago, String inicioContrato, String finContrato, String ciudadInstPub) {
+			 String nombreEvento, String diasNaturalesPago, String inicioContrato, String finContrato, String ciudadInstPub, 
+			 double porcentPrimerPago, double porcentSegundoPago, int DiasSegundoAnticipo) {
 		    
 	        PdfStamper stamper = null;
 	        PdfReader reader;
@@ -53,13 +54,14 @@ public class CreaContratoSPv2 {
 	        PdfContentByte canvas2 = stamper.getOverContent(2);
 	        PdfContentByte canvas3 = stamper.getOverContent(3);
 	        PdfContentByte canvas4 = stamper.getOverContent(4);
-	        PdfContentByte canvas8 = stamper.getOverContent(8);
+	        PdfContentByte canvas5 = stamper.getOverContent(5);
+	        PdfContentByte canvas9 = stamper.getOverContent(9);
 
 	        canvas.beginText();
 	        canvas2.beginText();
 	        canvas3.beginText();
 	        canvas4.beginText();
-	        canvas8.beginText();
+	        canvas9.beginText();
 
 	        Chunk c0empresa = new Chunk(nombreEmpresa, Arial);		
 	        Chunk c0represental = new Chunk(representanteLegal, Arial);
@@ -73,107 +75,136 @@ public class CreaContratoSPv2 {
 	        Chunk c0rfc = new Chunk(rfc, Arial);
 	        Chunk c0rfcPrestador = new Chunk(rfcPrestador, Arial);
 	        Chunk c0NombreEvento = new Chunk(nombreEvento, Arial);
+	        
+	        
 	        Chunk c0DiasNatPago = new Chunk(diasNaturalesPago, Arial);
+	        Chunk c0PorcPrimerPago = new Chunk(String.valueOf(porcentPrimerPago), Arial);
+	        Chunk c0PorcSegundoPago = new Chunk(String.valueOf(porcentSegundoPago), Arial);
+	        Chunk c0DiasSegundoPago = new Chunk(DiasSegundoAnticipo+"", Arial);
+	        
+	        
 	        Chunk c0ciudadInstPub = new Chunk(ciudadInstPub, Arial);
 	        
-	        String[] fechaArray = Utils.convertirFechaATexto(inicioContrato).split("DE");
-	        
 	        Chunk c0FinContrato = new Chunk(Utils.convertirFechaATexto(finContrato), Arial);
-	        Chunk c0InicioContrato = new Chunk(fechaArray[0]+"          "+fechaArray[1]+"                     "+fechaArray[2], Arial);
+	        Chunk c0InicioContrato = new Chunk(Utils.convertirFechaATexto(inicioContrato), Arial);
 
 	        Arial.setSize(11.0f);
-	        Arial.setStyle(1);
+	        //Arial.setStyle(1);
 	        
 	        phraset = new Phrase(c0empresa);
-	        ColumnText.showTextAligned(canvas, 10, phraset, 60.0f, 696.0f, 0.0f);
+	        ColumnText.showTextAligned(canvas, 10, phraset, 54.0f, 653.7f, 0.0f);
 	        System.out.println("Generando empresa: " + phraset);
 
-	        phraset = new Phrase(c0represental);	
-	        ColumnText.showTextAligned(canvas, 30, phraset, 100.0f, 516.0f, 0.0f);
-	        System.out.println("Generando c0represental: " + phraset);
+	        phraset = new Phrase(  c0represental);	
+	        ColumnText.showTextAligned(canvas, 30, phraset, 260.0f, 489.0f, 0.0f);
+	        System.out.println("Generando c0representalegal: " + phraset);
 
 	        phraset = new Phrase(c0inotarial);	
-	        ColumnText.showTextAligned(canvas, 90, phraset, 470.0f, 475.0f, 0.0f);
+	        ColumnText.showTextAligned(canvas, 90, phraset, 260.0f, 336.0f, 0.0f);
 	        System.out.println("Generando c0inotarial: " + phraset);
 
 	        phraset = new Phrase(c0fechain);	
-	        ColumnText.showTextAligned(canvas, 10, phraset, 105.0f, 460.0f, 0.0f);
-	        System.out.println("Generando c0fechain: " + phraset);
+	        ColumnText.showTextAligned(canvas, 10, phraset, 87.0f, 432.0f, 0.0f);
+	        System.out.println("Generando c0fechainstrumentoPublico: " + phraset);
 
 	        phraset = new Phrase(c0notariop);	
-	        ColumnText.showTextAligned(canvas, 46, phraset, 60.0f, 448.0f, 0.0f);
+	        ColumnText.showTextAligned(canvas, 46, phraset, 465.0f, 432.0f, 0.0f);
 	        System.out.println("Generando c0notariop: " + phraset);
 	        
 	        phraset = new Phrase(c0ciudadInstPub);	
-	        ColumnText.showTextAligned(canvas, 46, phraset, 273.0f, 447.0f, 0.0f);
+	        ColumnText.showTextAligned(canvas, 46, phraset, 142.0f, 419.0f, 0.0f);
 	        System.out.println("Generando c0ciudadInstPub: " + phraset);
 	        
 	        phraset = new Phrase(c0licenciaf);	
-	        ColumnText.showTextAligned(canvas, 65, phraset, 455.0f, 447.0f, 0.0f);
+	        ColumnText.showTextAligned(canvas, 65, phraset, 390.0f, 420.0f, 0.0f);
 	        System.out.println("Generando c0licenciaf: " + phraset);
 
 	        phraset = new Phrase(c0rfc);	
-	        ColumnText.showTextAligned(canvas, 40, phraset, 435.0f, 405.0f, 0.0f);
+	        ColumnText.showTextAligned(canvas, 40, phraset, 435.0f, 378.0f, 0.0f);
 	        System.out.println("Generando c0rfc: " + phraset);
 
-	        phraset = new Phrase(c0instPubC);	
-	        ColumnText.showTextAligned(canvas, 40, phraset, 273.0f, 364.0f, 0.0f);
-	        System.out.println("Generando c0InstPubC: " + phraset);
+	        phraset = new Phrase(c0instPubC);//Primer instrumento
+	        ColumnText.showTextAligned(canvas, 40, phraset, 460.0f, 447.0f, 0.0f);
+	        System.out.println("Generando c0InstrumentoPublicoC: " + phraset);
 
 	        phraset = new Phrase(c0ObjetoSocial);	
-	        ColumnText.showTextAligned(canvas, 40, phraset, 200.0f, 322.0f, 0.0f);
-	        System.out.println("Generando c0InstPubC: " + phraset);
+	        ColumnText.showTextAligned(canvas, 40, phraset, 200.0f, 295.0f, 0.0f);
+	        System.out.println("Generando c0ObjetoSocial: " + phraset);
 
 	        phraset = new Phrase(c0DomicilioEmp);	
-	        ColumnText.showTextAligned(canvas, 40, phraset, 235.0f, 295.0f, 0.0f);
+	        ColumnText.showTextAligned(canvas, 40, phraset, 54.0f, 255.0f, 0.0f);
 	        System.out.println("Generando c0DomicilioEmp: " + phraset);
 	        
 	        //Pagina dos del PDF
 
 	        phraset = new Phrase(c0rfcPrestador);
-	        ColumnText.showTextAligned(canvas2, 10, phraset, 438.0f, 682.0f, 0.0f);
+	        ColumnText.showTextAligned(canvas2, 10, phraset, 54.0f, 598.7f, 0.0f);
 	        System.out.println("Generando c0rfcPrestador: " + phraset);
 	        
 	        //Página tres del PDF
 
 	        phraset = new Phrase(c0NombreEvento);
-	        ColumnText.showTextAligned(canvas3, 10, phraset, 124.0f, 612.0f, 0.0f);
+	        ColumnText.showTextAligned(canvas3, 10, phraset, 54.0f, 572.0f, 0.0f);
 	        System.out.println("Generando c0NombreEvento: " + phraset);
+	        
+	        
+	        
+	        
 	        
 	        //Página cuatro del PDF
 
 	        phraset = new Phrase(c0DiasNatPago);	
-	        ColumnText.showTextAligned(canvas4, 40, phraset, 370.0f, 502.0f, 0.0f);
+	        ColumnText.showTextAligned(canvas4, 40, phraset, 330.0f, 432.5f, 0.0f);
 	        System.out.println("Generando c0DiasNatPago: " + phraset);
 
-	        phraset = new Phrase(c0DiasNatPago);	
-	        ColumnText.showTextAligned(canvas4, 40, phraset, 250.0f, 198.0f, 0.0f);
-	        System.out.println("Generando c0DiasNatPago: " + phraset);
+	        phraset = new Phrase(c0PorcPrimerPago);	
+	        ColumnText.showTextAligned(canvas4, 40, phraset, 238.0f, 254.5f, 0.0f);
+	        System.out.println("Generando c0PorcPrimerPago: " + phraset);
+
+	        phraset = new Phrase(c0PorcSegundoPago);	
+	        ColumnText.showTextAligned(canvas4, 40, phraset, 255.0f, 198.0f, 0.0f);
+	        System.out.println("Generando c0PorcSegundoPago: " + phraset);
 	        
+	        phraset = new Phrase(c0DiasSegundoPago);	
+	        ColumnText.showTextAligned(canvas4, 40, phraset, 385.0f, 198.0f, 0.0f);
+	        System.out.println("Generando c0DiasSegundoPago: " + phraset);
+	        
+	        
+
+	        
+	        
+	        
+	        
+	        //Pagina cinco del contrato
 	        phraset = new Phrase(c0FinContrato);	
-	        ColumnText.showTextAligned(canvas4, 40, phraset, 60.0f, 102.0f, 0.0f);
+	        ColumnText.showTextAligned(canvas5, 40, phraset, 60.0f, 627.0f, 0.0f);
 	        System.out.println("Generando c0FinContrato: " + phraset);
 	        
-	        //Página ocho del contrato
 	        
+	        
+	        
+	        
+	        
+	        
+	        //Página nueve del contrato
 	        phraset = new Phrase(c0InicioContrato);	
-	        ColumnText.showTextAligned(canvas8, 40, phraset, 120.0f, 267.0f, 0.0f);
+	        ColumnText.showTextAligned(canvas9, 40, phraset, 120.0f, 640.0f, 0.0f);
 	        System.out.println("Generando c0InicioContrato: " + phraset);
 	        
 	        if(nombreEmpresa.length() <= 18) {
 	        	phraset = new Phrase(c0empresa);	
-		        ColumnText.showTextAligned(canvas8, 40, phraset, 300.0f, 115.0f, 0.0f);
+		        ColumnText.showTextAligned(canvas9, 40, phraset, 320.0f, 328.0f, 0.0f);
 		        System.out.println("Generando c0empresa: " + phraset);
 	        }else {
 	        	String c1 = nombreEmpresa.substring(0, 25)+"-".trim();
 	        	String c2 = nombreEmpresa.substring(25,nombreEmpresa.length()).trim();
 	        	Chunk c0empresa1 = new Chunk(c1, Arial);
 	        	phraset = new Phrase(c0empresa1);	
-	        	ColumnText.showTextAligned(canvas8, 40, phraset, 300.0f, 115.0f, 0.0f);
+	        	ColumnText.showTextAligned(canvas9, 40, phraset, 320.0f, 328.0f, 0.0f);
 	        	
 	        	Chunk c0empresa2 = new Chunk(c2, Arial);
 		        phraset = new Phrase(c0empresa2);
-	        	ColumnText.showTextAligned(canvas8, 40, phraset, 300.0f, 100.0f, 0.0f);
+	        	ColumnText.showTextAligned(canvas9, 40, phraset, 320.0f, 313.0f, 0.0f);
 		        System.out.println("Generando c0empresa: " + phraset);
 	        }
 	        

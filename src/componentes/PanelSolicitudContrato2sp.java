@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import com.toedter.calendar.JDateChooser;
+import javax.swing.SwingConstants;
 
 public class PanelSolicitudContrato2sp extends JPanel{
 
@@ -26,6 +27,9 @@ public class PanelSolicitudContrato2sp extends JPanel{
 	private JTextField txtDiasNatPago;
 	private JDateChooser dteInicioContrato;
 	private JDateChooser dteFinContrato;
+	private JTextField txtPrimerAnticipio;
+	private JTextField txtSegundoAnticipo;
+	private JTextField txtDiasSegundoPago;
 
 
 	public PanelSolicitudContrato2sp(){		 	 			
@@ -67,6 +71,7 @@ public class PanelSolicitudContrato2sp extends JPanel{
 	public JDateChooser getDteInicioContrato() {
 		if(dteInicioContrato == null) {
 			dteInicioContrato = new JDateChooser();
+			dteInicioContrato.setToolTipText("Fecha de inicio del contrato");
 			dteInicioContrato.setBounds(152, 68, 160, 20);
 			Clientecon.add(dteInicioContrato);
 		}
@@ -76,7 +81,8 @@ public class PanelSolicitudContrato2sp extends JPanel{
 	public JDateChooser getDteFinContrato() {
 		if(dteFinContrato == null) {
 			dteFinContrato = new JDateChooser();
-			dteFinContrato.setBounds(437, 68, 160, 20);
+			dteFinContrato.setToolTipText("Fecha de termino del contrato");
+			dteFinContrato.setBounds(437, 68, 175, 20);
 			Clientecon.add(dteFinContrato);
 		}
 		return dteFinContrato;
@@ -85,7 +91,8 @@ public class PanelSolicitudContrato2sp extends JPanel{
 	public JTextField getTxtNombreEvento() {
 		if(txtNombreEvento==null) {
 			txtNombreEvento = new JTextField();
-			txtNombreEvento.setBounds(152, 38, 445, 20);
+			txtNombreEvento.setToolTipText("Nombre del evento al cual se le brindar\u00E1 servicio");
+			txtNombreEvento.setBounds(152, 38, 460, 20);
 			Clientecon.add(txtNombreEvento);
 		}
 		return txtNombreEvento;
@@ -95,11 +102,45 @@ public class PanelSolicitudContrato2sp extends JPanel{
 	public JTextField getTxtDiasNatPago() {
 		if(txtDiasNatPago == null) {
 			txtDiasNatPago = new JTextField();
+			txtDiasNatPago.setToolTipText("D\u00EDas naturales en los cuales se efectuar\u00E1 el pago");
 			txtDiasNatPago.setBounds(152, 98, 154, 20);
 			Clientecon.add(txtDiasNatPago);
 		}
 		return txtDiasNatPago;
 	}
+	
+	public JTextField getTxtPrimerAnticipo() {
+		if(txtPrimerAnticipio == null) {
+			txtPrimerAnticipio = new JTextField();
+			txtPrimerAnticipio.setToolTipText("Porcentaje del primer anticipio basado en el precio total del servicio");
+			txtPrimerAnticipio.setBounds(152, 169, 154, 20);
+			Clientecon.add(txtPrimerAnticipio);
+		}
+		return txtPrimerAnticipio;
+	}
+	
+	public JTextField getTxtSegundoAnticipo() {
+		if(txtSegundoAnticipo == null) {
+			txtSegundoAnticipo = new JTextField();
+			txtSegundoAnticipo.setToolTipText("Porcentaje del segundo anticipio basado en el precio total del servicio");
+			txtSegundoAnticipo.setBounds(458, 167, 154, 20);
+			Clientecon.add(txtSegundoAnticipo);
+		}
+		return txtSegundoAnticipo;
+	}
+	
+	public JTextField getTxtDiasSegundoPago() {
+		if(txtDiasSegundoPago == null) {
+			txtDiasSegundoPago = new JTextField();
+			txtDiasSegundoPago.setToolTipText("Porcentaje del segundo anticipio basado en el precio total del servicio");
+			txtDiasSegundoPago.setBounds(458, 198, 154, 20);
+			Clientecon.add(txtDiasSegundoPago);
+		}
+		return txtDiasSegundoPago;
+	}
+	
+	
+	
 
 
 	public JPanel getClientecon(){
@@ -148,6 +189,38 @@ public class PanelSolicitudContrato2sp extends JPanel{
 			Clientecon.add(getTxtNombreEvento());
 			Clientecon.add(getDteFinContrato());
 			Clientecon.add(getDteInicioContrato());
+			
+			Clientecon.add(getTxtPrimerAnticipo());
+			Clientecon.add(getTxtSegundoAnticipo());
+			Clientecon.add(getTxtDiasSegundoPago());
+			
+			JLabel lblprimerAnticipo = new JLabel("*Primer anticipo (%):");
+			lblprimerAnticipo.setForeground(new Color(0, 70, 129));
+			lblprimerAnticipo.setFont(new Font("Arial", Font.BOLD, 12));
+			lblprimerAnticipo.setBounds(25, 169, 154, 14);
+			Clientecon.add(lblprimerAnticipo);
+			
+			
+			
+			JLabel lblsegundoAnticipo = new JLabel("*Segundo \r\nanticipo (%):");
+			lblsegundoAnticipo.setHorizontalAlignment(SwingConstants.CENTER);
+			lblsegundoAnticipo.setVerticalAlignment(SwingConstants.TOP);
+			lblsegundoAnticipo.setForeground(new Color(0, 70, 129));
+			lblsegundoAnticipo.setFont(new Font("Arial", Font.BOLD, 12));
+			lblsegundoAnticipo.setBounds(322, 171, 126, 15);
+			Clientecon.add(lblsegundoAnticipo);
+			
+			JLabel lbldasParaSegundo = new JLabel("*D\u00EDas para segundo pago posteriores al evento:");
+			lbldasParaSegundo.setVerticalAlignment(SwingConstants.TOP);
+			lbldasParaSegundo.setHorizontalAlignment(SwingConstants.CENTER);
+			lbldasParaSegundo.setForeground(new Color(0, 70, 129));
+			lbldasParaSegundo.setFont(new Font("Arial", Font.BOLD, 12));
+			lbldasParaSegundo.setBounds(134, 204, 326, 15);
+			Clientecon.add(lbldasParaSegundo);
+			
+			
+			
+			
 
 			Clientecon.setVisible(true);
 		}
@@ -161,6 +234,9 @@ public class PanelSolicitudContrato2sp extends JPanel{
 		getTxtDiasNatPago().setText(vacio);
 		getDteInicioContrato().setDate(null);
 		getDteFinContrato().setDate(null);
+		getTxtPrimerAnticipo().setText("");
+		getTxtSegundoAnticipo().setText("");
+		getTxtDiasSegundoPago().setText("");
 	}
 
 	public JFileChooser getButtonGenerarcotizacion() {

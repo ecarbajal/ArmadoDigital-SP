@@ -260,12 +260,15 @@ public class Principal extends JFrame implements ActionListener, MouseMotionList
 	private static String rfcContratoSP;
 	private static String objetoSocial;
 	private static String domicilioEmpresa;
-	private static String rfcPrestador;
+	private static String rfcPrestador = "";
 	private static String nombreEvento;
 	private static String diasNaturalesPago;
 	private static String inicioContrato;
 	private static String finContrato;
 	private static String ciudadInstPub;
+	private static double primerAnticipo;
+	private static double segundoAnticipo;
+	private static int DiasSegundoAnticipo;
 	private String vacio = "";
 
 	SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -977,12 +980,12 @@ public class Principal extends JFrame implements ActionListener, MouseMotionList
 				rfcContratoSP = getPanelSolicitudContratosp().gettxtRfc().getText().trim().toUpperCase();
 				objetoSocial = getPanelSolicitudContratosp().gettxtObjSocial().getText().trim().toUpperCase();
 				domicilioEmpresa = getPanelSolicitudContratosp().gettxtDomiclioEmpresa().getText().trim().toUpperCase();
-				rfcPrestador = getPanelSolicitudContratosp().getTxtRFCPrestador().getText().trim().toUpperCase();
+				//rfcPrestador = getPanelSolicitudContratosp().getTxtRFCPrestador().getText().trim().toUpperCase();
 				ciudadInstPub = getPanelSolicitudContratosp().getTxtCiudadInstPublico().getText().trim().toUpperCase();
 				if (nombreempresa.equals(vacio) || representanteLegal.equals(vacio) || instrumentoPublico.equals(vacio)
 						|| fechaInstPublico.equals(vacio) || notarioPublico.equals(vacio) || licenciado.trim().equals(vacio)
 						|| rfcContratoSP.equals(vacio) || objetoSocial.equals(vacio) || domicilioEmpresa.equals(vacio)
-						|| rfcPrestador.equals(vacio) || ciudadInstPub.equals(vacio) || fechaInstPublico == null) {
+						|| /*rfcPrestador.equals(vacio) || */ciudadInstPub.equals(vacio) || fechaInstPublico == null) {
 					st = "Favor de llenar los campos solicitados";
 					Utils.muestraMensaje(st);
 				} else {
@@ -992,6 +995,7 @@ public class Principal extends JFrame implements ActionListener, MouseMotionList
 				
 			}catch (NullPointerException e) {
 				JOptionPane.showMessageDialog(null, "Debe ingresar una fecha válida", "ERROR", JOptionPane.ERROR_MESSAGE);
+				System.out.println("ERROR "+e.getMessage());
 			}
 			
 
@@ -1000,21 +1004,35 @@ public class Principal extends JFrame implements ActionListener, MouseMotionList
 		}
 
 		else if (arg0.getSource() == getPanelSolicitudContrato2sp().BotonSiguientec2()) {
+			
+			try {
 
 			nombreEvento = getPanelSolicitudContrato2sp().getTxtNombreEvento().getText().trim().toUpperCase();
 			diasNaturalesPago = getPanelSolicitudContrato2sp().getTxtDiasNatPago().getText().trim().toUpperCase();
 			inicioContrato = sdf.format(getPanelSolicitudContrato2sp().getDteInicioContrato().getDate());
 			finContrato = sdf.format(getPanelSolicitudContrato2sp().getDteFinContrato().getDate());
+			try {
+				
+			primerAnticipo = Double.parseDouble(getPanelSolicitudContrato2sp().getTxtPrimerAnticipo().getText().trim());
+			segundoAnticipo = Double.parseDouble(getPanelSolicitudContrato2sp().getTxtSegundoAnticipo().getText().trim());
+			DiasSegundoAnticipo = Integer.parseInt(getPanelSolicitudContrato2sp().getTxtDiasSegundoPago().getText().trim());
+			
+			}catch(NumberFormatException nfe) {
+				JOptionPane.showMessageDialog(null, "Debe ingresar una valor númerico válido", "ERROR", JOptionPane.ERROR_MESSAGE);
+				System.out.println(nfe.getMessage());
+			}
+			
+			
 
 			if (nombreEvento.equals(vacio) || diasNaturalesPago.equals(vacio) || inicioContrato.equals(vacio)
-					|| finContrato.equals(vacio)) {
+					|| finContrato.equals(vacio) || primerAnticipo == 0.0 || segundoAnticipo == 0.0 || DiasSegundoAnticipo == 0) {
 				Utils.muestraMensaje("Debes llenar todos los campos");
 			} else {
 				CreaContratoSPv2 ccsp = new CreaContratoSPv2();
 
 				ccsp.creaHoja(nombreempresa, representanteLegal, instrumentoPublico, fechaInstPublico, notarioPublico,
 						licenciado, rfcContratoSP, objetoSocial, domicilioEmpresa, rfcPrestador, nombreEvento,
-						diasNaturalesPago, inicioContrato, finContrato, ciudadInstPub);
+						diasNaturalesPago, inicioContrato, finContrato, ciudadInstPub,primerAnticipo,segundoAnticipo, DiasSegundoAnticipo);
 				
 				getPanelSolicitudContratosp().limpiarFormPnlSolicitudContSP();
 				
@@ -1025,6 +1043,11 @@ public class Principal extends JFrame implements ActionListener, MouseMotionList
 				getPanelBotones().setVisible(true);
 
 			}
+			
+			}catch (NullPointerException e) {
+				JOptionPane.showMessageDialog(null, "Debe ingresar una fecha válida", "ERROR", JOptionPane.ERROR_MESSAGE);
+			}
+			
 
 		}
 
